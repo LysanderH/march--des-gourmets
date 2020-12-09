@@ -30,13 +30,11 @@
     {{-- TODO modify social media meta tags --}}
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://gourmets.local/">
-    <meta property="og:title"
-    content="@hasSection('title') @yield('title') - Marché des gourmets @else Marché des gourmets 
-    @endif">
+<meta property="og:title" content="@hasSection('title') @yield('title') - Marché des gourmets @else Marché des gourmets 
+@endif">
 <meta property="og:image" content="https://example.com/image.jpg">
 <meta property="og:description" content="Description Here">
-<meta property="og:site_name"
-content="@hasSection('title') @yield('title') - Marché des gourmets @else Marché des gourmets 
+<meta property="og:site_name" content="@hasSection('title') @yield('title') - Marché des gourmets @else Marché des gourmets 
 @endif">
 <meta property="og:locale" content="fr_BE">
 <meta property="og:image:width" content="1200">
@@ -46,8 +44,7 @@ content="@hasSection('title') @yield('title') - Marché des gourmets @else March
 <meta name="twitter:site" content="@site_account">
 <meta name="twitter:creator" content="@individual_account">
 <meta name="twitter:url" content="https://gourmets.local">
-<meta name="twitter:title"
-content=" @hasSection('title') @yield('title') - Marché des gourmets @else Marché des gourmets  
+<meta name="twitter:title" content=" @hasSection('title') @yield('title') - Marché des gourmets @else Marché des gourmets  
 @endif">
 <meta name="twitter:description" content="Content description less than 200 characters">
 <meta name="twitter:image" content="https://example.com/image.jpg">
@@ -56,7 +53,31 @@ content=" @hasSection('title') @yield('title') - Marché des gourmets @else Marc
 </head>
 
 <body>
+<header>
 <h1 role="heading" aria-level="1">Marché des gourmets <span class="sr-only">- @yield('main-heading')</span></h1>
+<nav class="global">
+<ul class="global__list">
+    <li class="global__item">
+        <a href="{{ route('home') }}" class="global__link">Accueil</a>
+    </li>
+    <li class="global__item">
+        <a href="{{ route('exhibitors') }}" class="global__link">Exposants</a>
+    </li>
+    <li class="global__item">
+        <a href="{{ route('become-exhibitor') }}" class="global__link">Devenir exposant</a>
+    </li>
+    <li class="global__item">
+        <a href="{{ route('practical-information') }}" class="global__link">Informations pratiques</a>
+    </li>
+    <li class="global__item">
+        <a href="{{ route('gallery') }}" class="global__link">La galerie</a>
+    </li>
+    <li class="global__item">
+        <a href="{{ route('contact') }}" class="global__link">Contact</a>
+    </li>
+</ul>
+</nav>
+</header>
 @yield('content')
 </body>
 
