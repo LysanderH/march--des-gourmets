@@ -16,7 +16,7 @@
 
     @include('layout.social-media')
 
-    <link rel="stylesheet" href="{{ asset('/css/app.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ mix('/css/app.css') }}">
 </head>
 
 <body>
@@ -27,7 +27,7 @@
         <span class="date">Du 27 au 28 mars 2020</span>
         <a href="/tickets" class="btn cta"><span class="sr-only">Acheter vos </span>Tickets</a>
         <nav class="global" aria-label="globale">
-            <h2 role="heading" aria-level="2">Navigation globale</h2>
+            <h2 role="heading" aria-level="2" class="sr-only">Navigation globale</h2>
             <ul class="global__list">
                 <li class="global__item">
                     <a href="{{ route('home') }}" class="global__link">Accueil</a>

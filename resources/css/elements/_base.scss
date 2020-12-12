@@ -1,0 +1,19 @@
+.sr-only {
+  @include sr-only;
+}
+
+h1 {
+  @include pacifico(26px, $white);
+}
+
+.btn {
+  @include btn-reset;
+  text-decoration: none;
+  @include roboto(16px, $white);
+  background-color: $cta;
+  padding: 16px 24px;
+  transition: background-color .2s ease-in-out;
+  &:hover{
+    background-color: $cta-hover;
+  }
+}
