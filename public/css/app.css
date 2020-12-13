@@ -443,9 +443,16 @@ h1 {
   /* Legacy iOS */
 }
 .header {
+  padding: 16px 139px;
+  background-color: #323E40;
+  width: 100%;
+}
+.header__wrapper {
+  max-width: 1088px;
+  margin: auto;
   display: flex;
   align-items: center;
-  background-color: #323E40;
+  justify-content: space-between;
 }
 
 .date {
@@ -453,4 +460,15 @@ h1 {
   font-size: 16px;
   font-size: 1rem;
   color: #fff;
+}
+
+.global {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 100vw;
+  min-height: 100vh;
+  background-color: #323E40;
+  z-index: 100;
 }
