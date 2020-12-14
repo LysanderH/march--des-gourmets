@@ -61,6 +61,17 @@
 
         @yield('content')
 
+        <section class="partners" aria-label="Nos partenaires">
+            <h2 class="partners__heading" role="heading" aria-level="2">Nos partenaires</h2>
+            <ul class="partners__list">
+                <li class="partners__items"><img src="{{ asset('/storage/assets/img/rc-flemalle.png') }}"
+                         alt="Logo du club Rotary de Flémalle"
+                         class="partners__img"></li>
+                <li class="partners__items"><img src="{{ asset('/storage/assets/img/province-liege.png') }}"
+                         alt="logo de La Province de Liège"
+                         class="partners__img"></li>
+            </ul>
+        </section>
     </main>
     <footer class="footer">
         <div class="footer__wrapper">
@@ -76,7 +87,6 @@
                 </ul>
             </nav>
         </div>
-
     </footer>
 </body>
 
