@@ -378,13 +378,6 @@ textarea {
   border: 0 !important;
 }
 
-h1 {
-  font-family: "Pacifico", script;
-  font-size: 26px;
-  font-size: 1.625rem;
-  color: #fff;
-}
-
 .btn {
   border: none;
   background-color: transparent;
@@ -460,15 +453,92 @@ h1 {
   font-size: 16px;
   font-size: 1rem;
   color: #fff;
+  margin: auto;
+}
+
+.main-heading__link {
+  text-decoration: none;
+  font-family: "Pacifico", script;
+  font-size: 26px;
+  font-size: 1.625rem;
+  color: #fff;
+}
+
+.menu__label {
+  cursor: pointer;
+}
+.menu__label--open {
+  text-indent: -9999em;
+  width: 50px;
+  height: 50px;
+  background: url(../storage/assets/icons/speisekarte.svg) no-repeat 50% 50%;
+  background-size: contain;
+  margin-left: 16px;
+}
+.menu__label--close {
+  grid-area: close;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  font-size: 1rem;
+  color: #fff;
+  align-self: top;
+  justify-self: right;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.menu__label--close::before {
+  content: "";
+  display: block;
+  width: 30px;
+  height: 30px;
+  background: url(../storage/assets/icons/close.svg) no-repeat 50% 50%;
+  background-size: contain;
+  margin-right: 8px;
+}
+.menu__cbx {
+  display: none;
 }
 
 .global {
-  display: none;
   position: absolute;
   top: 0;
   left: 0;
   min-width: 100vw;
   min-height: 100vh;
-  background-color: #323E40;
   z-index: 100;
+  padding: 32px 129px;
+  display: grid;
+  grid-template-areas: ". close" ". list";
+  background-color: #323E40;
+  transform: translateX(-150vw) skewX(30deg);
+  transform-origin: right top;
+  transition: transform 0.45s ease-in-out;
+}
+.global__list {
+  display: flex;
+  flex-direction: column;
+  grid-area: list;
+  align-self: end;
+  justify-self: right;
+}
+.global__link {
+  display: inline-block;
+  text-decoration: none;
+  font-family: "Roboto", sans-serif;
+  font-size: 20px;
+  font-size: 1.25rem;
+  color: #fff;
+  font-weight: 500;
+  text-align: right;
+  width: 100%;
+  padding: 16px 0;
+}
+.global__link:hover, .global__link:focus {
+  text-decoration: underline;
+  color: #D94D1A;
+}
+
+#menu-cbx:checked ~ .global {
+  transform: translateX(0) skewX(0);
 }

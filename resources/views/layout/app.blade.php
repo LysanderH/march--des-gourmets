@@ -22,16 +22,18 @@
 <body>
     <header class="header">
         <div class="header__wrapper">
-            <h1 role="heading" aria-level="1" class="main-heading">Marché des gourmets <span class="sr-only">-
-                    @yield('main-heading')</span>
+            <h1 role="heading" aria-level="1" class="main-heading"><a href="/" class="main-heading__link">Marché des
+                    gourmets <span class="sr-only">-
+                        @yield('main-heading')</span></a>
             </h1>
             <span class="date">Du 27 au 28 mars 2020</span>
             <a href="/tickets" class="btn cta"><span class="sr-only">Acheter vos </span>Tickets</a>
-            <label for="menu-cbx" class="menu__label" title="Ouvrir le menu">Ouvrir le menu</label>
+            <label for="menu-cbx" class="menu__label menu__label--open" title="Ouvrir le menu">Ouvrir le menu</label>
             <input type="checkbox" class="menu__cbx" id="menu-cbx">
             <nav class="global" aria-label="globale">
                 <h2 role="heading" aria-level="2" class="sr-only">Navigation globale</h2>
-                <label for="menu-cbx" class="menu__label" title="Fermer le menu">Ouvrir le menu</label>
+                <label for="menu-cbx" class="menu__label menu__label--close" title="Fermer le menu">Fermer le
+                    menu</label>
                 <ul class="global__list">
                     <li class="global__item">
                         <a href="{{ route('home') }}" class="global__link">Accueil</a>

@@ -2,10 +2,6 @@
   @include sr-only;
 }
 
-h1 {
-  @include pacifico(26px, $white);
-}
-
 .btn {
   @include btn-reset;
   text-decoration: none;

@@ -2,27 +2,110 @@
     padding: 16px 139px;
     background-color: $header-bcg;
     width: 100%;
-
+    
     &__wrapper {
         max-width: 1088px;
         margin: auto;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
     }
 }
 
 .date {
-    @include roboto(16px, $white)
+    @include roboto(16px, $white);
+    margin: auto;
 }
 
+.main-heading {
+    
+    &__link {
+        text-decoration: none;
+        @include pacifico(26px, $white);
+    }
+}
+
+.menu{
+    &__label {
+        cursor: pointer;
+        &--open {
+            text-indent: -9999em;
+            width: 50px;
+            height: 50px;
+            background: url(../storage/assets/icons/speisekarte.svg) no-repeat 50% 50%;
+            background-size: contain;
+            margin-left: 16px;
+        }
+        
+        &--close {
+            grid-area: close;
+            @include roboto(16px, $white);
+            align-self: top;
+            justify-self: right;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+
+            &::before {
+                content: "";
+                display: block;
+                width: 30px;
+                height: 30px;
+                background: url(../storage/assets/icons/close.svg) no-repeat 50% 50%;
+                background-size: contain;
+                margin-right: 8px;
+            }
+        }
+    }
+    
+    
+    &__cbx {
+        display: none;
+    }
+}
+
+// Le menu global
+
 .global {
-    display: none;
     position: absolute;
     top: 0;
     left: 0;
     min-width: 100vw;
     min-height: 100vh;
-    background-color: $header-bcg;
     z-index: 100;
+    padding: 32px 129px;
+    
+    display: grid;
+    grid-template-areas: ". close" ". list";
+    
+    background-color: $header-bcg;
+    transform: translateX(-150vw) skewX(30deg);
+    transform-origin: right top;
+    transition: transform .45s ease-in-out;
+    
+    &__list {
+        display: flex;
+        flex-direction: column;
+        grid-area: list;
+        align-self: end;
+        justify-self: right;
+    }
+    
+    &__link {
+        display: inline-block;
+        text-decoration: none;
+        @include roboto(20px, $white, 500);
+        text-align: right;
+        width: 100%;
+        padding: 16px 0;
+        
+        &:hover, &:focus {
+            text-decoration: underline;
+            color: $cta;
+        }
+    }
+}
+
+#menu-cbx:checked ~ .global {
+    transform: translateX(0) skewX(0);
 }
