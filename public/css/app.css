@@ -395,6 +395,29 @@ textarea {
   background-color: #812F12;
 }
 
+h2, .subtitle {
+  font-family: "Pacifico", script;
+  font-size: 24px;
+  font-size: 1.5rem;
+  color: #333;
+  line-height: 1.5;
+  background-color: #D9B573;
+  padding: 12px 16px;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.08);
+  border-radius: 0 0 10px 0;
+  display: inline-block;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+footer {
+  margin-top: auto;
+}
+
 /* pacifico-regular - latin */
 @font-face {
   font-family: "Pacifico";
@@ -541,4 +564,30 @@ textarea {
 
 #menu-cbx:checked ~ .global {
   transform: translateX(0) skewX(0);
+}
+
+.footer {
+  background-color: #D9B573;
+}
+.footer__wrapper {
+  max-width: 1088px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+}
+.footer__nav {
+  margin-left: auto;
+}
+
+.f-nav__list {
+  display: flex;
+}
+.f-nav__link {
+  display: inline-block;
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  font-size: 0.875rem;
+  color: #333;
+  text-decoration: none;
+  padding: 10px 16px;
 }

@@ -1,0 +1,29 @@
+.footer {
+    background-color: $footer-bcg;
+
+    &__wrapper {
+        max-width: 1088px;
+        margin: auto;
+        display: flex;
+        align-items: center;
+    }
+
+    &__nav {
+        margin-left: auto;
+    }
+}
+
+.f-nav {
+
+    &__list {
+        display: flex;
+    }
+
+    &__link{
+        display: inline-block;
+        @include roboto(14px, $text-color);
+        text-decoration: none;
+        padding: 10px 16px;
+    }
+    
+}
