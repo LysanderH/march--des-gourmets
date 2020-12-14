@@ -1,0 +1,69 @@
+.landing-zone {
+    position: relative;
+    width: 100%;
+    background: $white;
+    z-index: 10;
+    margin-top: 16px;
+    
+    &__wrapper {
+        position: relative;
+        max-width: 1088px;
+        min-height: calc(100vh - 82px);
+        margin: auto;
+        display: grid;
+        grid-gap: 16px;
+        grid-template-columns: 5fr 3fr 4fr;
+        grid-template-rows: auto;
+        grid-template-areas: "a b c"
+        "a d c" 
+        "hello e e";
+        
+    }
+    
+    &__img{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        max-width: 1088px;
+        height: calc(100vh - 82px);
+        background: url('../storage/assets/img/hello.jpeg') no-repeat 50% 50%;
+    }
+}
+
+
+@for $i from 1 to 6 {
+    .hide_#{$i} {
+        position: relative;
+        z-index: 10;
+        background-color: $section-border;
+        outline: solid 16px $white;
+        grid-area: nth([a, b, c, d, e], $i);
+    }
+}
+
+.hello {
+    grid-area: hello;
+    position: relative;
+    z-index: 20;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    padding: 16px 16px 0 0;
+
+    &__heading {
+        position: absolute;
+        top: -32px;
+        left: -24px;
+    }
+    
+    &__text {
+        @include roboto(16px, $text-color, $lh: 1.5);
+        margin-top: 32px;
+    }
+
+    &__link {
+        align-self: flex-end;
+        margin-top: 16px;
+    }
+}
