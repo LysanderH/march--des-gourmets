@@ -50,20 +50,97 @@
     display: flex;
     flex-direction: column;
     padding: 16px 16px 0 0;
-
+    
     &__heading {
         position: absolute;
         top: -32px;
         left: -24px;
+        
+        sup{
+            vertical-align: super;
+        }
     }
     
     &__text {
         @include roboto(16px, $text-color, $lh: 1.5);
         margin-top: 32px;
     }
-
+    
     &__link {
         align-self: flex-end;
         margin-top: 16px;
+    }
+}
+
+.info {
+    margin-top: 48px;
+    width: calc(((100vw - 1088px) / 2) + 1088px + 16px);
+    background-color: $sectioning;
+    padding: 16px 16px 16px 0;
+    display: flex;
+    
+    &__wrapper {
+        margin-left: auto;
+        width: $max-width-desktop;
+        display: flex;
+    }
+    
+    &__d-one, &__d-two {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        flex: 1;
+    }
+    
+    &__day {
+        @include roboto(25px, $text-color, 500);
+    }
+    
+    &__hour {
+        @include roboto(20px, $text-color);
+        margin-top: 16px;
+    }
+}
+
+.feature {
+    max-width: $max-width-desktop;
+    margin: 48px auto;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-column-gap: 16px;
+    
+    &__img {
+        width: 436px;
+        height: auto;
+        grid-column: 3/6;
+    }
+    
+    &__description {
+        grid-column: 5/11;
+        position: relative;
+        top: -32px;
+        
+        @include roboto(18px, $text-color, $lh: 1.5);
+        border: 1px solid $section-border;
+        box-shadow: 0 0 12px $section-border;
+        padding: 16px;
+        background-color: $white;
+    }
+
+    &__heading {
+        grid-column: 3/-1;
+        align-self: start;
+        justify-self: start;
+        position: relative;
+        top: 32px;
+        left: -24px;
+    }
+
+    &__link {
+        grid-column: 1/-1;
+        text-align: center;
+        align-self: center;
+        justify-self: center;
+
     }
 }
