@@ -8,7 +8,8 @@
     &__wrapper {
         position: relative;
         max-width: 1088px;
-        min-height: calc(100vh - 82px);
+        height: calc(100vh - 82px);
+        max-height: 620px;
         margin: auto;
         display: grid;
         grid-gap: 16px;
@@ -26,6 +27,7 @@
         left: 0;
         width: 100vw;
         max-width: 1088px;
+        max-height: 620px;
         height: calc(100vh - 82px);
         background: url('../storage/assets/img/hello.jpeg') no-repeat 50% 50%;
     }
@@ -126,7 +128,7 @@
         padding: 16px;
         background-color: $white;
     }
-
+    
     &__heading {
         grid-column: 3/-1;
         align-self: start;
@@ -135,12 +137,170 @@
         top: 32px;
         left: -24px;
     }
-
+    
     &__link {
         grid-column: 1/-1;
         text-align: center;
         align-self: center;
         justify-self: center;
+        
+    }
+}
 
+.supported {
+    max-width: $max-width-desktop;
+    margin: 0 auto 32px auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    position: relative;
+    grid-gap: 16px;
+    
+    &__heading {
+        grid-column: 1/-1;
+        justify-self: center;
+    }
+    
+    &__img {
+        object-fit: cover;
+        width: 100%;
+        order: 1;
+    }
+    
+    &__text {
+        order: 3;
+        @include roboto(16px, $text-color, $lh: 1.5);
+        margin-top: 16px;
+    }
+    
+    &__sect-heading {
+        order: 2;
+        @include roboto(18px, $text-color, 500, 1.5);
+        margin-top: 16px;
+        min-height: 54px;
+        text-align: center;
+    }
+    
+    &:before {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 32px;
+        left: -16px;
+        z-index: -1;
+        width: calc(((100vw - 1088px) / 2) + 1088px + 16px);
+        height: 176px;
+        background-color: $sectioning;
+    }
+    
+    &__item {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    &__btn {
+        grid-column: 1/-1;
+        justify-self: center;
+        margin-top: 16px;
+    }
+}
+
+.pricing {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    max-width: $max-width-desktop;
+    margin: 0 auto 48px auto;
+    
+    
+    &__heading, &__btn {
+        align-self: center;
+    }
+    
+    &__btn {
+        margin-top: 16px;
+    }
+    
+    &::before {
+        content: "";
+        display: block;
+        width: calc(((100vw - 1088px) / 2) + 1088px + 16px);
+        height: 146px;
+        position: absolute;
+        background-color: $sectioning;
+        z-index: -1;
+        top: 32px;
+        right: -16px;
+    }
+    
+    &__info {
+        @include roboto(16px, $text-color, 500);
+        text-align: center;
+        margin-top: 16px;
+    }
+    
+    &__list {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 16px;
+        margin-top: 24px;
+    }
+    
+    &__wrapper {
+        background-color: $white;
+        border: 1px solid $section-border;
+        box-shadow: 0 0 12px $section-border;
+        text-align: center;
+        padding: 24px;
+    }
+    
+    &__therm {
+        @include roboto(21px, $text-color, 500);
+        margin-bottom: 16px;
+    }
+    
+    &__price {
+        @include roboto(55px, $text-color, 900);
+    }
+}
+
+.producer {
+    max-width: 536px;
+    margin: 92px auto 48px auto;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    
+    &__heading {
+        position: absolute;
+        top: -32px;
+        left: -24px;
+        align-self: center;
+        margin-bottom: 16px;
+    }
+    
+    &__btn {
+        align-self: center;
+        margin-top: 16px;
+    }
+    
+    &__img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+.partners {
+    max-width: $max-width-desktop;
+    margin: 0 auto 48px auto;
+    text-align: center;
+    
+    &__heading {
+    }
+    
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        margin-top: 16px;
     }
 }
