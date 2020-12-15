@@ -1,0 +1,108 @@
+.contact {
+    &__cta {
+        grid-column: 1/-1;
+        justify-self: center;
+        margin-top: 48px;
+    }
+    
+    &__definition {
+        @include roboto(16px, $text-color, $lh: 1.5);
+    }
+    
+    &__form {
+        grid-area: form;
+        
+        display: flex;
+        flex-direction: column;
+        
+        padding: 48px 16px 16px 16px;
+        border: 1px solid $section-border;
+        box-shadow: 0 0 12px 0 $section-border;
+    }
+    
+    &__heading {
+        position: absolute;
+        top: -32px;
+        left: -24px;
+    }
+    
+    &__info {
+        grid-area: info;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        
+        padding: 16px;
+        border: 1px solid $section-border;
+        box-shadow: 0 0 12px 0 $section-border;
+    }
+    
+    &__info-wrapper {
+        
+        &--grid {
+            display: grid;
+            grid-template-columns: auto 1fr;
+        }
+    }
+    
+    &__input {
+        border: 1px solid $input-border;
+        padding: 4px 8px;
+        @include roboto(16px, $text-color);
+        margin-bottom: 8px;
+    }
+    
+    &__label {
+        @include roboto(16px, $text-color);
+        margin-bottom: 4px;
+    }
+    
+    &__link {
+        @include roboto(16px, $text-color);
+        text-decoration: none;
+    }
+    
+    &__message {
+        grid-area: message;
+        padding: 16px;
+        border: 1px solid $section-border;
+        box-shadow: 0 0 12px 0 $section-border;
+        @include roboto(16px, $text-color, $lh: 1.5);
+        
+    }
+    
+    &__submit {
+        align-self: flex-end;
+    }
+    
+    &__therm {
+        float: left;
+        margin-right: 16px;
+        @include roboto(16px, $text-color, $lh: 1.5);
+
+        $sections: [tel mobile mail];
+        @each $i in $sections {
+            &--#{$i} {
+                background: url('../storage/assets/icons/#{$i}.svg') no-repeat 50% 50%;
+                background-size: contain;
+                text-indent: -9999em;
+                width: 24px;
+                height: 24px;
+                margin-bottom: 4px;
+            }
+        }
+        
+    }
+    
+    &__wrapper { 
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas: "form message" "form info";
+        grid-gap: 16px;
+        
+        max-width: $max-width-desktop;
+        margin: 48px auto;
+        
+        position: relative;
+    }
+}

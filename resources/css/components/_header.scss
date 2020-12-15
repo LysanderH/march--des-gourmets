@@ -1,20 +1,40 @@
 .header {
-    padding: 16px 139px;
     background-color: $header-bcg;
-    width: 100%;
+    
+    @include media-query(0, 960px) {
+        padding: 16px 24px;
+    }
+    
+    @media screen and (min-width: 960px) {
+        padding: 16px 139px;
+        width: 100%;
+    }
     
     &__wrapper {
-        max-width: 1088px;
+        max-width: $max-width-desktop;
         margin: auto;
         display: flex;
         align-items: center;
         justify-content: space-between;
+        @include media-query(0, 376px){
+            max-width: 100%;
+            margin: 0;
+        }
+    }
+
+    &__cta {
+        @include media-query(0, 680px){
+            margin-left: auto;
+        }
     }
 }
 
 .date {
     @include roboto(16px, $white);
     margin: auto;
+        @include media-query(0, 680px) {
+            display: none;
+        }
 }
 
 .main-heading {
@@ -45,7 +65,7 @@
             display: flex;
             flex-direction: row;
             align-items: center;
-
+            
             &::before {
                 content: "";
                 display: block;

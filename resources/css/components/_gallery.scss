@@ -1,0 +1,65 @@
+.gallery {
+    max-width: $max-width-desktop;
+    margin: 46px auto;
+    position: relative;
+
+&::before {
+    content: "";
+    display: block;
+    width: calc(((100vw - 1088px) / 2) + 1088px + 16px);
+    height: 100px;
+    background-color: $sectioning;
+    position: absolute;
+    top: 0;
+    right: -16px;
+    z-index: -1;
+}
+
+    &__cta {
+        margin: 0 auto 48px auto;
+        display: inline-block;
+    }
+
+    &__form {
+        margin-left: auto;
+    }
+
+    &__img {
+        width: 100%;
+        height: auto;
+    }
+
+    &__item {
+        overflow: hidden;
+    }
+
+    &__list {
+        margin-top: 16px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 16px;
+    }
+
+    &__select {
+        border: none;
+        padding: 8px 4px;
+        box-shadow: 0 0 6px $section-border;
+    }
+
+    &__subtitle {
+        position: absolute;
+        top: -32px;
+        left: -24px;
+    }
+
+    &__text {
+        @include roboto(16px, $text-color)
+    }
+
+    &__wrapper {
+        display: flex;
+        align-items: center;
+        height: 100px;
+    }
+}
+

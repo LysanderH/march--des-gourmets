@@ -27,7 +27,7 @@
                         @yield('main-heading')</span></a>
             </h1>
             <span class="date">Du 27 au 28 mars 2020</span>
-            <a href="/tickets" class="btn cta"><span class="sr-only">Acheter vos </span>Tickets</a>
+            <a href="/tickets" class="btn cta header__cta"><span class="sr-only">Acheter vos </span>Tickets</a>
             <label for="menu-cbx" class="menu__label menu__label--open" title="Ouvrir le menu">Ouvrir le menu</label>
             <input type="checkbox" class="menu__cbx" id="menu-cbx">
             <nav class="global" aria-label="globale">

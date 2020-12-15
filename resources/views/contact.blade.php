@@ -6,7 +6,8 @@
 @section('content')
 
     <div class="contact__wrapper">
-        <form action="#" method="post">
+        <span class="contact__heading subtitle">Contact</span>
+        <form action="#" method="post" class="contact__form">
             <label for="name" class="contact__label">Nom</label>
             <input type="text" id="name" name="name" class="contact__input">
             <label for="mail" class="contact__label">Mail</label>
@@ -14,7 +15,8 @@
             <label for="subject" class="contact__label">Sujet</label>
             <input type="text" id="subject" name="subject" class="contact__input">
             <label for="message" class="contact__label">Message</label>
-            <textarea name="message" id="message" cols="30" rows="10" placeholder="Votre message ici..."></textarea>
+            <textarea name="message" id="message" cols="30" rows="10" placeholder="Votre message ici..."
+                      class="contact__input"></textarea>
             <button class="contact__submit btn cta">Envoyer</button>
         </form>
         <p class="contact__message">
@@ -30,20 +32,20 @@
                 <dt class="sr-only contact__therm">Ville</dt>
                 <dd class="contact__definition">4000 Liège</dd>
             </div>
-            <div class="contact__info-wrapper">
-                <dt class="contact__therm">Téléphone</dt>
+            <div class="contact__info-wrapper contact__info-wrapper--grid">
+                <dt class="contact__therm contact__therm--tel">Téléphone</dt>
                 <dd class="contact__definition"><a href="tel:003242528324" class="contact__link">+32 (0) 425 283 24</a></dd>
-                <dt class="contact__therm">GSM</dt>
+                <dt class="contact__therm contact__therm--mobile">GSM</dt>
                 <dd class="contact__definition"><a href="tel:0032475311105" class="contact__link">+32 (0) 475 311 105</a>
                 </dd>
             </div>
             <div class="contact__info-wrapper">
-                <dt class="contact__therm">Email</dt>
+                <dt class="contact__therm contact__therm--mail">Email</dt>
                 <dd class="contact__definition"><a href="mailto:info@marchedesgourmets.be"
                        class="contact__link">info@marchedesgourmets.be</a></dd>
             </div>
             <div class="contact__info-wrapper">
-                <dt class="contact__therm">Nom du propriétaire de compte</dt>
+                <dt class="contact__therm sr-only">Nom du propriétaire de compte</dt>
                 <dd class="contact__definition">ASBL Rotary de Flémalle</dd>
                 <dt class="contact__therm">IBAN</dt>
                 <dd class="contact__definition">BE27 1430 8077 8873</dd>
