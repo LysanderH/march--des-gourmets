@@ -6,33 +6,30 @@
 @section('content')
 
     <div class="practical">
-        <div class="practical__wrapper">
-            <span class="subtitle">Informations pratiques</span>
-            <div class="practical__d-one">
-                <span class="practical__day">Samedi 27 mars</span>
-                <span class="practical__hour">De 11h00 à 20h00</span>
-            </div>
-            <div class="practical__d-two">
-                <span class="practical__day">Samedi 27 mars</span>
-                <span class="practical__hour">De 10h00 à 19h00</span>
-            </div>
+        <span class="subtitle practical__heading">Informations pratiques</span>
+        <div class="practical__d-one">
+            <span class="practical__day">Samedi 27 mars</span>
+            <span class="practical__hour">De 11h00 à 20h00</span>
+        </div>
+        <div class="practical__d-one">
+            <span class="practical__day">Samedi 27 mars</span>
+            <span class="practical__hour">De 10h00 à 19h00</span>
         </div>
     </div>
 
     <section class="map" aria-label="Informations de déplacement">
         <h2 class="sr-only map__heading" role="heading" aria-level="2">Informations de déplacement</h2>
-        <iframe width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"
-                src="https://www.openstreetmap.org/export/embed.html?bbox=2.2071066498756413%2C49.02212647179123%2C2.2123637795448308%2C49.02431450222161&amp;layer=mapnik"
-                style="border: 1px solid black"></iframe>
+        <iframe width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" class="map__map"
+                src="https://www.openstreetmap.org/export/embed.html?bbox=2.2071066498756413%2C49.02212647179123%2C2.2123637795448308%2C49.02431450222161&amp;layer=mapnik"></iframe>
         <article class="car">
             <h3 class="car__heading">En voiture</h3>
-            <img src="" alt="Illustration d'une voiture" class="car__img">
+            <img src="../storage/assets/icons/car.svg" alt="Illustration d'une voiture" class="car__img">
             <p class="car__text">Profitez de notre parking, on vous conseille de prendre la sortie A604 sur l'autoroute E40.
             </p>
         </article>
         <article class="car">
             <h3 class="car__heading">Transport en commun</h3>
-            <img src="" alt="Illustration d'un train" class="car__img">
+            <img src="../storage/assets/icons/train.svg" alt="Illustration d'un train" class="car__img">
             <p class="car__text">En bus, il suffit de prendre le numéro 9, celui-ci passe aussi à la gare de
                 Liège-Guillemins.</p>
         </article>
@@ -61,15 +58,18 @@
     <div class="side-info">
         <section class="info-payment" aria-label="Méthode de payement">
             <h2 class="sr-only info-payment__heading" role="heading" aria-level="2">Méthode de payement</h2>
-            <img src="" alt="Logo Mister Cash" class="info-payment__img">
+            <img src="{{ asset('/storage/assets/img/BC_logo_ORGNL_RGB-200.png') }}" alt="Logo Mister Cash"
+                 class="info-payment__img">
             <p class="info-payment__text">Le payement par banccontact est possible sur les lieux. Si un vendeur n'a pas de
                 module de payement sans contact, il est toujours possible de retirer de l'argent à l'entrée.</p>
         </section>
-        <section class="info-dog" aria-label="Les animaux de companie ne sont pas permis">
-            <h2 class="sr-only info-dog__heading" role="heading" aria-level="2">Les animaux de companie ne sont pas permis
+        <section class="info-payment" aria-label="Les animaux de companie ne sont pas permis">
+            <h2 class="sr-only info-payment__heading" role="heading" aria-level="2">Les animaux de companie ne sont pas
+                permis
             </h2>
-            <img src="" alt="Signe animaux de companie ne sont pas permis" class="info-dog__img">
-            <p class="info-dog__text">Les animaux de companie ne sont pas permis sur les lieux.</p>
+            <img src="{{ asset('/storage/assets/icons/no-dogs-svgrepo-com.svg') }}"
+                 alt="Signe animaux de companie ne sont pas permis" class="info-payment__img">
+            <p class="info-payment__text">Les animaux de companie ne sont pas permis sur les lieux.</p>
         </section>
     </div>
 

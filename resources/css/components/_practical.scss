@@ -1,0 +1,109 @@
+.practical {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    max-width: $max-width-desktop;
+    margin: 48px auto 16px auto;
+    position: relative;
+    min-height: 145px;
+    
+    &__heading {
+        position: absolute;
+        top: -32px;
+        left: -24px;
+    }
+    
+    &::before {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        right: -16px;
+        min-height: 145px;
+        background: $sectioning;
+        width: calc(((100vw - 1088px) / 2) + 1088px + 16px);
+        z-index: -1;
+    }
+    
+    &__d-one {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    &__day {
+        @include roboto(25px, $text-color, 500);
+        margin-bottom: 16px;
+    }
+    
+    &__hour {
+        @include roboto(20px, $text-color);
+    }
+}
+
+.map {
+    display: grid;
+    grid-gap: 16px;
+    grid-template-columns: repeat(2, 1fr);
+    max-width: $max-width-desktop;
+    margin: 0 auto 48px auto;
+    
+    &__map {
+        width: 100%;
+        grid-column: 1/-1;
+    }
+}
+
+.car {
+    border: 1px solid $section-border;
+    box-shadow: 0 0 12px 0 $section-border;
+    padding: 16px;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    
+    &__heading {
+        @include roboto(18px, $text-color, 500);
+        order: 2;
+        margin: 16px 0;
+    }
+    
+    &__img {
+        order: 1;
+        width: auto;
+        height: 50px;
+    }
+    
+    &__text {
+        order: 3;
+        @include roboto(16px, $text-color, $lh: 1.5);
+    }
+}
+
+.side-info {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 16px;
+    max-width: $max-width-desktop;
+    margin: auto;
+}
+
+.info-payment {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    border: 1px solid $section-border;
+    box-shadow: 0 0 12px 0 $section-border;
+    padding: 16px;
+
+    &__img {
+        height: 110px;
+        width: auto;
+        margin-bottom: 16px;
+    }
+    &__text {
+        @include roboto(16px, $text-color, $lh: 1.5);
+    }
+}

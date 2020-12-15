@@ -5,7 +5,8 @@
 
 @section('content')
     <div class="gallery">
-        <span class="gallery__subtitle"></span>
+        <span class="gallery__subtitle subtitle">Gallerie</span>
+        <p class="gallery__text">Les impressions des années précédentes</p>
         <form action="" class="gallery__form">
             <select name="" id="" class="gallery__select">
                 <option class="gallery__option">2020</option>

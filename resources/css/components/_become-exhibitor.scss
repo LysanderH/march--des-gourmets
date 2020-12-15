@@ -1,0 +1,128 @@
+.bec-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    position: relative;
+    padding: 32px 16px;
+    margin-top: 48px;
+    max-width: $max-width-desktop;
+    margin: 48px auto;
+    @include roboto(16px, $text-color, $lh: 1.5);
+    &__heading {
+        position: absolute;
+        top: -32px;
+        left: -24px;
+    }
+    
+    &::before {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        left: -16px;
+        min-height: 100%;
+        width: calc(((100vw - 1088px) / 2) + 1088px + 16px);
+        background-color: $sectioning;
+        z-index: -1;
+    }
+}
+
+.form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 16px;
+    max-width: $max-width-desktop;
+    margin: auto;
+    
+    &__section {
+        display: flex;
+        flex-direction: column;
+        padding: 48px 16px 16px 16px;
+        border: 1px solid $section-border;
+        box-shadow: 0 0 12px $section-border;
+        position: relative;
+        
+        &--checkboxes {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            grid-column: 1/-1;
+        }
+        
+        &--message {
+            grid-column: 1/-1;
+            padding-top: 16px;
+        }
+    }
+    
+    &__message {
+        padding: 16px;
+        @include roboto(16px, $text-color, $lh: 1.5);
+        margin: 16px 0;
+    }
+    
+    &__submit {
+        align-self: flex-end;
+    }
+    
+    &__heading {
+        position: absolute;
+        top: 16px;
+        left: 16px;
+        @include roboto(16px, $text-color, 500);
+        &--message {
+            @include roboto(16px, $text-color, 500);
+        }
+    }
+}
+
+.label {
+    @include roboto(16px, $text-color);
+    margin-bottom: 4px;
+}
+
+.input {
+    @include roboto(16px, $text-color);
+    margin-bottom: 8px;
+    padding: 8px 16px;
+    border: 1px solid $input-border;
+    
+    &--checkbox {
+        position: absolute;
+        left: -100vw;
+
+        &:checked ~ .checkbox__span {
+            background: url('../storage/assets/icons/check.svg') no-repeat 50% 50%;
+            background-size: 16px;
+        }
+
+        &:focus ~ .checkbox__span {
+            border: 2px solid black;
+
+        }
+    }
+}
+
+.checkbox{
+    
+    &__label {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: start;
+        align-items: center;
+        @include roboto(16px, $text-color);
+        margin: 8px 0;
+    }
+    
+    &__span {
+        display: block;
+        border: 1px solid $input-border;
+        width: 24px;
+        height: 24px;
+        margin-right: 4px;
+    }
+}
+
+.bec-exhibitor__link {
+    display: inline-block;
+    margin: 48px auto;
+}
