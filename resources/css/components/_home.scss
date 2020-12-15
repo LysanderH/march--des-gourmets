@@ -231,6 +231,9 @@
         top: 32px;
         right: -16px;
     }
+    &--right::before{
+        left: -16px;
+    }
     
     &__info {
         @include roboto(16px, $text-color, 500);

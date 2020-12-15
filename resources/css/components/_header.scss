@@ -79,7 +79,7 @@
     grid-template-areas: ". close" ". list";
     
     background-color: $header-bcg;
-    transform: translateX(-150vw) skewX(30deg);
+    transform: translateX(-180vw) skewX(30deg);
     transform-origin: right top;
     transition: transform .45s ease-in-out;
     

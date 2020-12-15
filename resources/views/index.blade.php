@@ -27,7 +27,7 @@
     </div>
 
     <section class="info" aria-label="info">
-        <h2 class="info__heading sr-only" role="heading" aria-level="2">info</h2>
+        <h2 class="sr-only info__heading" role="heading" aria-level="2">info</h2>
         <div class="info__wrapper">
             <div class="info__d-one">
                 <span class="info__day">Samedi 27 mars</span>

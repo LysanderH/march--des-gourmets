@@ -534,7 +534,7 @@ footer {
   display: grid;
   grid-template-areas: ". close" ". list";
   background-color: #323E40;
-  transform: translateX(-150vw) skewX(30deg);
+  transform: translateX(-180vw) skewX(30deg);
   transform-origin: right top;
   transition: transform 0.45s ease-in-out;
 }
@@ -849,6 +849,9 @@ footer {
   z-index: -1;
   top: 32px;
   right: -16px;
+}
+.pricing--right::before {
+  left: -16px;
 }
 .pricing__info {
   font-family: "Roboto", sans-serif;
