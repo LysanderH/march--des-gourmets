@@ -28,11 +28,13 @@
             </h1>
             <span class="date">Du 27 au 28 mars 2020</span>
             <a href="/tickets" class="btn cta header__cta"><span class="sr-only">Acheter vos </span>Tickets</a>
-            <label for="menu-cbx" class="menu__label menu__label--open" title="Ouvrir le menu">Ouvrir le menu</label>
+            <label for="menu-cbx" class="menu__label menu__label--open" title="Ouvrir le menu" tabindex="0">Ouvrir le
+                menu</label>
             <input type="checkbox" class="menu__cbx" id="menu-cbx">
             <nav class="global" aria-label="globale">
                 <h2 role="heading" aria-level="2" class="sr-only">Navigation globale</h2>
-                <label for="menu-cbx" class="menu__label menu__label--close" title="Fermer le menu">Fermer le
+                <label for="menu-cbx" class="menu__label menu__label--close" title="Fermer le menu" tabindex="0">Fermer
+                    le
                     menu</label>
                 <ul class="global__list">
                     <li class="global__item">

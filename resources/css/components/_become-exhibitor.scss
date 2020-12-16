@@ -39,7 +39,7 @@
         flex-direction: column;
         padding: 48px 16px 16px 16px;
         border: 1px solid $section-border;
-        box-shadow: 0 0 12px $section-border;
+        box-shadow: 0 0 .8em lighten($section-border, 50%);
         position: relative;
         
         &--checkboxes {
@@ -68,7 +68,8 @@
         position: absolute;
         top: 16px;
         left: 16px;
-        @include roboto(16px, $text-color, 500);
+        text-transform: uppercase;
+        @include roboto(16px, $cta, 500);
         &--message {
             @include roboto(16px, $text-color, 500);
         }
@@ -77,12 +78,12 @@
 
 .label {
     @include roboto(16px, $text-color);
-    margin-bottom: 4px;
+    margin-bottom: .5em;
 }
 
 .input {
     @include roboto(16px, $text-color);
-    margin-bottom: 8px;
+    margin-bottom: 2em;
     padding: 8px 16px;
     border: 1px solid $input-border;
     
