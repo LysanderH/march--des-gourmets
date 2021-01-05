@@ -17,6 +17,7 @@
     @include('layout.social-media')
 
     <link rel="stylesheet" type="text/css" href="{{ mix('/css/app.css') }}">
+    @yield('map-css')
 </head>
 
 <body>
@@ -90,6 +91,7 @@
             </nav>
         </div>
     </footer>
+    @yield('map-js')
 </body>
 
 </html>

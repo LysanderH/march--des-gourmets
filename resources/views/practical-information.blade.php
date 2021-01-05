@@ -3,6 +3,12 @@
 @section('title', 'Informations pratiques - Marché des gourmets')
 @section('main-heading', 'Informations pratiques')
 
+@section('map-css')
+    <link rel="stylesheet" href="{{ asset('/css/leaflet.css') }}"
+          integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+          crossorigin="">
+@endsection
+
 @section('content')
 
     <div class="practical">
@@ -19,8 +25,12 @@
 
     <section class="map" aria-label="Informations de déplacement">
         <h2 class="sr-only map__heading" role="heading" aria-level="2">Informations de déplacement</h2>
-        <iframe width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" class="map__map"
-                src="https://www.openstreetmap.org/export/embed.html?bbox=2.2071066498756413%2C49.02212647179123%2C2.2123637795448308%2C49.02431450222161&amp;layer=mapnik"></iframe>
+        <div class="map__map" id="mapid" style="min-height: 500px">
+            <noscript>
+                <img src="{{ asset('/storage/assets/img/map.png') }}" alt="Image de la carte d'accès" class="map__img"
+                     width="1088" height="500">
+            </noscript>
+        </div>
         <article class="car">
             <h3 class="car__heading">En voiture</h3>
             <img src="../storage/assets/icons/car.svg" alt="Illustration d'une voiture" class="car__img">
@@ -92,4 +102,22 @@
             offerts à nos stands.</p>
         <a href="{{ route('exhibitors') }}" class="feature__link cta btn">Voir les exposants</a>
     </section>
+@endsection
+
+@section('map-js')
+    <script src="{{ asset('/js/leaflet.js') }}"></script>
+    <script async>
+        var map = L.map('mapid').setView([50.593562942613325, 5.482897114209436], 16);
+        var marker = L.marker([50.593562942613325, 5.482897114209436]).addTo(map);
+        var popup = marker.bindPopup('<b>Val Saint lambert</b><br />');
+
+
+
+        L.tileLayer('https://tile.openstreetmap.be/osmbe/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors' +
+                ', Tiles courtesy of <a href="https://geo6.be/">GEO-6</a>',
+            maxZoom: 18
+        }).addTo(map);
+
+    </script>
 @endsection
