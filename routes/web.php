@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('index');
-})->name('home');
+})->name('home')->template(\App\Nova\Templates\Home::class);
 
 Route::get('/exposants', function () {
     return view('exhibitors');
