@@ -27,7 +27,9 @@
                     gourmets <span class="sr-only">-
                         @yield('main-heading')</span></a>
             </h1>
-            <span class="date">Du 27 au 28 mars 2020</span>
+            <span class="date">Du
+                {{ \Carbon\Carbon::parse(Page::option('Horaires')->starting_date)->format('d') }}
+                au {{ \Carbon\Carbon::parse(Page::option('Horaires')->ending_date)->format('d F Y') }}</span>
             <a href="/tickets" class="btn cta header__cta"><span class="sr-only">Acheter vos </span>Tickets</a>
             <label for="menu-cbx" class="menu__label menu__label--open" title="Ouvrir le menu" tabindex="0">Ouvrir le
                 menu</label>

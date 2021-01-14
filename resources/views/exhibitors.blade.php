@@ -42,111 +42,33 @@
 
     <section class="exhibitors" aria-label="Liste des exposants">
         <h2 class="exhibitors__heading sr-only" role="heading" aria-level="2">Liste des exposants</h2>
-        <ul class="exhibitors__list">
-            {{-- LOOP Exhibitors --}}
-            <li class="exhibitors__item">
-                <article class="exhibitor" aria-label="Écohay">
-                    <h3 class="exhibitor__heading" role="heading" aria-level="3">Écohay</h3>
-                    <img src="https://www.fillmurray.com/66/66" alt="" width="66" height="66" class="exhibitor__logo">
-                    <span class="exhibitor__country">Auvergne</span>
-                    <ul class="exhibitor__list">
-                        <li class="exhibitor__item">Vin</li>
-                    </ul>
-                </article>
-            </li>
-            <li class="exhibitors__item">
-                <article class="exhibitor" aria-label="Écohay">
-                    <h3 class="exhibitor__heading" role="heading" aria-level="3">Écohay</h3>
-                    <img src="https://www.fillmurray.com/66/66" alt="" width="66" height="66" class="exhibitor__logo">
-                    <span class="exhibitor__country">Auvergne</span>
-                    <ul class="exhibitor__list">
-                        <li class="exhibitor__item">Fromage</li>
-                    </ul>
-                </article>
-            </li>
-            <li class="exhibitors__item">
-                <article class="exhibitor" aria-label="Écohay">
-                    <h3 class="exhibitor__heading" role="heading" aria-level="3">Écohay</h3>
-                    <img src="https://www.fillmurray.com/66/66" alt="" width="66" height="66" class="exhibitor__logo">
-                    <span class="exhibitor__country">Auvergne</span>
-                    <ul class="exhibitor__list">
-                        <li class="exhibitor__item"></li>
-                    </ul>
-                </article>
-            </li>
-            <li class="exhibitors__item">
-                <article class="exhibitor" aria-label="Écohay">
-                    <h3 class="exhibitor__heading" role="heading" aria-level="3">Écohay</h3>
-                    <img src="https://www.fillmurray.com/66/66" alt="" width="66" height="66" class="exhibitor__logo">
-                    <span class="exhibitor__country">Auvergne</span>
-                    <ul class="exhibitor__list">
-                        <li class="exhibitor__item"></li>
-                    </ul>
-                </article>
-            </li>
-            <li class="exhibitors__item">
-                <article class="exhibitor" aria-label="Écohay">
-                    <h3 class="exhibitor__heading" role="heading" aria-level="3">Écohay</h3>
-                    <img src="https://www.fillmurray.com/66/66" alt="" width="66" height="66" class="exhibitor__logo">
-                    <span class="exhibitor__country">Auvergne</span>
-                    <ul class="exhibitor__list">
-                        <li class="exhibitor__item"></li>
-                    </ul>
-                </article>
-            </li>
-            <li class="exhibitors__item">
-                <article class="exhibitor" aria-label="Écohay">
-                    <h3 class="exhibitor__heading" role="heading" aria-level="3">Écohay</h3>
-                    <img src="https://www.fillmurray.com/66/66" alt="" width="66" height="66" class="exhibitor__logo">
-                    <span class="exhibitor__country">Auvergne</span>
-                    <ul class="exhibitor__list">
-                        <li class="exhibitor__item"></li>
-                    </ul>
-                </article>
-            </li>
-            <li class="exhibitors__item">
-                <article class="exhibitor" aria-label="Écohay">
-                    <h3 class="exhibitor__heading" role="heading" aria-level="3">Écohay</h3>
-                    <img src="https://www.fillmurray.com/66/66" alt="" width="66" height="66" class="exhibitor__logo">
-                    <span class="exhibitor__country">Auvergne</span>
-                    <ul class="exhibitor__list">
-                        <li class="exhibitor__item"></li>
-                    </ul>
-                </article>
-            </li>
-            <li class="exhibitors__item">
-                <article class="exhibitor" aria-label="Écohay">
-                    <h3 class="exhibitor__heading" role="heading" aria-level="3">Écohay</h3>
-                    <img src="https://www.fillmurray.com/66/66" alt="" width="66" height="66" class="exhibitor__logo">
-                    <span class="exhibitor__country">Auvergne</span>
-                    <ul class="exhibitor__list">
-                        <li class="exhibitor__item"></li>
-                    </ul>
-                </article>
-            </li>
-            <li class="exhibitors__item">
-                <article class="exhibitor" aria-label="Écohay">
-                    <h3 class="exhibitor__heading" role="heading" aria-level="3">Écohay</h3>
-                    <img src="https://www.fillmurray.com/66/66" alt="" width="66" height="66" class="exhibitor__logo">
-                    <span class="exhibitor__country">Auvergne</span>
-                    <ul class="exhibitor__list">
-                        <li class="exhibitor__item"></li>
-                    </ul>
-                </article>
-            </li>
-            <li class="exhibitors__item">
-                <article class="exhibitor" aria-label="Écohay">
-                    <h3 class="exhibitor__heading" role="heading" aria-level="3">Écohay</h3>
-                    <img src="https://www.fillmurray.com/66/66" alt="" width="66" height="66" class="exhibitor__logo">
-                    <span class="exhibitor__country">Auvergne</span>
-                    <ul class="exhibitor__list">
-                        <li class="exhibitor__item"></li>
-                    </ul>
-                </article>
-            </li>
-        </ul>
+        @if ($exhibitors->isNotEmpty())
+            <ul class="exhibitors__list">
+                @foreach ($exhibitors as $exhibitor)
+                    <li class="exhibitors__item">
+                        <article class="exhibitor" aria-label="Écohay">
+                            <h3 class="exhibitor__heading" role="heading" aria-level="3">{{ $exhibitor->company }}</h3>
+                            <img src="https://www.fillmurray.com/66/66" alt="" width="66" height="66"
+                                 class="exhibitor__logo">
+                            <span class="exhibitor__country">{{ $exhibitor->country }}</span>
+                            @if ($exhibitor->categories->isNotEmpty())
+                                <ul class="exhibitor__list">
+                                    @foreach ($exhibitor->categories as $category)
+                                        <li class="exhibitor__item">{{ $category->name }}</li>
+                                    @endforeach
+                                </ul>
+                            @endif
+                        </article>
+                    </li>
+                @endforeach
+
+            </ul>
+        @else
+            <p class="exhibitors__no-exhibitors">La liste des exposants arrivera bientôt.</p>
+        @endif
     </section>
-    <div class="pagination">
+    {{ $exhibitors->links() }}
+    {{-- <div class="pagination">
         <ul class="pagination__list">
             <li class="pagination__item"><a href="#" class="pagination__link">Précédent</a></li>
             <li class="pagination__item"><a href="#" class="pagination__link active">1</a></li>
@@ -155,7 +77,7 @@
             <li class="pagination__item"><a href="#" class="pagination__link">4</a></li>
             <li class="pagination__item"><a href="#" class="pagination__link">Suivant</a></li>
         </ul>
-    </div>
+    </div> --}}
     <div class="cta__wrapper">
         <a href="/plan-espace" class="btn exhibitors__link">Voir le plan d’espace</a>
     </div>

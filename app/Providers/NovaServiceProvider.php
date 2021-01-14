@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Gate;
 use Laravel\Nova\Cards\Help;
 use Laravel\Nova\Nova;
 use Laravel\Nova\NovaApplicationServiceProvider;
+use EricLagarda\NovaGallery\NovaGallery;
 
 class NovaServiceProvider extends NovaApplicationServiceProvider
 {
@@ -79,6 +80,7 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
     {
         return [
             \Whitecube\NovaPage\NovaPageTool::make(),
+            new NovaGallery,
         ];
     }
 

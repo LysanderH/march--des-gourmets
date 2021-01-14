@@ -16,6 +16,8 @@
     <form action="#" class="form" enctype="multipart/form-data">
         <fieldset class="form__section">
             <legend class="form__heading">Informations générales</legend>
+            <label for="enterprise" class="label">Nom d’entreprise</label>
+            <input type="text" class="input" id="enterprise" name="enterprise" placeholder="Les délices du chef">
             <label for="name" class="label">Nom</label>
             <input type="text" class="input" id="name" name="name" placeholder="Doe">
             <label for="first-name" class="label">Prénom</label>
@@ -31,6 +33,8 @@
             <legend class="form__heading">Adresse</legend>
             <label for="street" class="label">Rue</label>
             <input type="text" class="input" id="street" name="street" placeholder="Rue Neuve">
+            <label for="street_number" class="label">Numéro de maison</label>
+            <input type="text" class="input" id="street_number" name="street_number" placeholder="57">
             <label for="postal" class="label">Code postal</label>
             <input type="text" class="input" id="postal" name="postal" placeholder="4000">
             <label for="ville" class="label">Ville</label>

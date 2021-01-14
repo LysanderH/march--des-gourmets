@@ -14,12 +14,18 @@
     <div class="practical">
         <span class="subtitle practical__heading">Informations pratiques</span>
         <div class="practical__d-one">
-            <span class="practical__day">Samedi 27 mars</span>
-            <span class="practical__hour">De 11h00 à 20h00</span>
+            <span
+                  class="practical__day">{{ \Carbon\Carbon::parse(Page::option('Horaires')->starting_date)->format('l d F') }}</span>
+            <span class="practical__hour">De
+                {{ \Carbon\Carbon::parse(Page::option('Horaires')->starting_day_one)->format('H:i') }} à
+                {{ \Carbon\Carbon::parse(Page::option('Horaires')->ending_day_one)->format('H:i') }}</span>
         </div>
         <div class="practical__d-one">
-            <span class="practical__day">Samedi 27 mars</span>
-            <span class="practical__hour">De 10h00 à 19h00</span>
+            <span
+                  class="practical__day">{{ \Carbon\Carbon::parse(Page::option('Horaires')->ending_date)->format('l d F') }}</span>
+            <span class="practical__hour">De
+                {{ \Carbon\Carbon::parse(Page::option('Horaires')->starting_day_two)->format('H:i') }} à
+                {{ \Carbon\Carbon::parse(Page::option('Horaires')->ending_day_two)->format('H:i') }}</span>
         </div>
     </div>
 
@@ -51,15 +57,15 @@
         <dl class="pricing__list">
             <div class="pricing__wrapper">
                 <dt class="pricing__therm">Enfants moin de 16 ans</dt>
-                <dd class="pricing__price">0€</dd>
+                <dd class="pricing__price">@option('Prix.price_children')€</dd>
             </div>
             <div class="pricing__wrapper">
                 <dt class="pricing__therm">Adultes</dt>
-                <dd class="pricing__price">6€</dd>
+                <dd class="pricing__price">@option('Prix.price_adults')€</dd>
             </div>
             <div class="pricing__wrapper">
                 <dt class="pricing__therm">Exposants</dt>
-                <dd class="pricing__price">250€</dd>
+                <dd class="pricing__price">@option('Prix.price_exhibitors')€</dd>
             </div>
         </dl>
         <a href="/acheter-vos-tickets" class="pricing__btn cta btn">Acheter vos tickets</a>
@@ -68,18 +74,17 @@
     <div class="side-info">
         <section class="info-payment" aria-label="Méthode de payement">
             <h2 class="sr-only info-payment__heading" role="heading" aria-level="2">Méthode de payement</h2>
-            <img src="{{ asset('/storage/assets/img/BC_logo_ORGNL_RGB-200.png') }}" alt="Logo Mister Cash"
+            <img src="{{ asset('/storage/' . Page::get('info_bancontact_img')) }}" alt="Logo Mister Cash"
                  class="info-payment__img">
-            <p class="info-payment__text">Le payement par banccontact est possible sur les lieux. Si un vendeur n'a pas de
-                module de payement sans contact, il est toujours possible de retirer de l'argent à l'entrée.</p>
+            <p class="info-payment__text">{{ Page::get('info_description_one') }}</p>
         </section>
         <section class="info-payment" aria-label="Les animaux de companie ne sont pas permis">
             <h2 class="sr-only info-payment__heading" role="heading" aria-level="2">Les animaux de companie ne sont pas
                 permis
             </h2>
-            <img src="{{ asset('/storage/assets/icons/no-dogs-svgrepo-com.svg') }}"
+            <img src="{{ asset('/storage/' . Page::get('info_animal_img')) }}"
                  alt="Signe animaux de companie ne sont pas permis" class="info-payment__img">
-            <p class="info-payment__text">Les animaux de companie ne sont pas permis sur les lieux.</p>
+            <p class="info-payment__text">{{ Page::get('info_description_one') }}</p>
         </section>
     </div>
 

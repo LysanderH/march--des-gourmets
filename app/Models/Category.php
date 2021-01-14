@@ -5,12 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Exhibitor extends Model
+class Category extends Model
 {
     use HasFactory;
 
-    public function categories()
+    public function exhibitors()
     {
-        return $this->belongsToMany(Category::class);
+        return $this->belongsToMany(Exhibitor::class);
     }
 }

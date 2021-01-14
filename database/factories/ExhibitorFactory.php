@@ -22,7 +22,18 @@ class ExhibitorFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'company' => $this->faker->company,
+            'name' => $this->faker->name(),
+            'firstname' => $this->faker->firstName(),
+            'email' => $this->faker->unique()->email(),
+            'phone' => $this->faker->e164PhoneNumber,
+            'street' => $this->faker->streetName,
+            'house_number' => $this->faker->buildingNumber,
+            'postal' => $this->faker->randomNumber($nbDigits = 4),
+            'village' => $this->faker->city,
+            'country' => $this->faker->country,
+            'description' => $this->faker->text(),
+            'accepted' => $this->faker->boolean($chanceOfGettingTrue = 50),
         ];
     }
 }

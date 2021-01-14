@@ -10,77 +10,21 @@
             <p class="gallery__text">Les impressions des années précédentes</p>
             <form action="/" method="get" class="gallery__form">
                 <select name="year" id="" class="gallery__select">
-                    <option class="gallery__option">2020</option>
-                    <option class="gallery__option">2019</option>
-                    <option class="gallery__option">2018</option>
-                    <option class="gallery__option">2017</option>
+                    @foreach ($albums as $album)
+                        <option class="gallery__option">{{ $album->name }}</option>
+                    @endforeach
                 </select>
             </form>
         </div>
         <ul class="gallery__list">
-            <li class="gallery__item"><img src="https://www.fillmurray.com/352/198"
-                     alt="Image montrant le marché de gourmets" class="gallery__img">
-            </li>
-            <li class="gallery__item"><img src="https://www.fillmurray.com/352/198"
-                     alt="Image montrant le marché de gourmets" class="gallery__img">
-            </li>
-            <li class="gallery__item"><img src="https://www.fillmurray.com/352/198"
-                     alt="Image montrant le marché de gourmets" class="gallery__img">
-            </li>
-            <li class="gallery__item"><img src="https://www.fillmurray.com/352/198"
-                     alt="Image montrant le marché de gourmets" class="gallery__img">
-            </li>
-            <li class="gallery__item"><img src="https://www.fillmurray.com/352/198"
-                     alt="Image montrant le marché de gourmets" class="gallery__img">
-            </li>
-            <li class="gallery__item"><img src="https://www.fillmurray.com/352/198"
-                     alt="Image montrant le marché de gourmets" class="gallery__img">
-            </li>
-            <li class="gallery__item"><img src="https://www.fillmurray.com/352/198"
-                     alt="Image montrant le marché de gourmets" class="gallery__img">
-            </li>
-            <li class="gallery__item"><img src="https://www.fillmurray.com/352/198"
-                     alt="Image montrant le marché de gourmets" class="gallery__img">
-            </li>
-            <li class="gallery__item"><img src="https://www.fillmurray.com/352/198"
-                     alt="Image montrant le marché de gourmets" class="gallery__img">
-            </li>
-            <li class="gallery__item"><img src="https://www.fillmurray.com/352/198"
-                     alt="Image montrant le marché de gourmets" class="gallery__img">
-            </li>
-            <li class="gallery__item"><img src="https://www.fillmurray.com/352/198"
-                     alt="Image montrant le marché de gourmets" class="gallery__img">
-            </li>
-            <li class="gallery__item"><img src="https://www.fillmurray.com/352/198"
-                     alt="Image montrant le marché de gourmets" class="gallery__img">
-            </li>
-            <li class="gallery__item"><img src="https://www.fillmurray.com/352/198"
-                     alt="Image montrant le marché de gourmets" class="gallery__img">
-            </li>
-            <li class="gallery__item"><img src="https://www.fillmurray.com/352/198"
-                     alt="Image montrant le marché de gourmets" class="gallery__img">
-            </li>
-            <li class="gallery__item"><img src="https://www.fillmurray.com/352/198"
-                     alt="Image montrant le marché de gourmets" class="gallery__img">
-            </li>
-            <li class="gallery__item"><img src="https://www.fillmurray.com/352/198"
-                     alt="Image montrant le marché de gourmets" class="gallery__img">
-            </li>
-            <li class="gallery__item"><img src="https://www.fillmurray.com/352/198"
-                     alt="Image montrant le marché de gourmets" class="gallery__img">
-            </li>
-            <li class="gallery__item"><img src="https://www.fillmurray.com/352/198"
-                     alt="Image montrant le marché de gourmets" class="gallery__img">
-            </li>
-            <li class="gallery__item"><img src="https://www.fillmurray.com/352/198"
-                     alt="Image montrant le marché de gourmets" class="gallery__img">
-            </li>
-            <li class="gallery__item"><img src="https://www.fillmurray.com/352/198"
-                     alt="Image montrant le marché de gourmets" class="gallery__img">
-            </li>
-            <li class="gallery__item"><img src="https://www.fillmurray.com/352/198"
-                     alt="Image montrant le marché de gourmets" class="gallery__img">
-            </li>
+            @foreach ($albums as $album)
+                @foreach ($album->photos as $photo)
+                    <li class="gallery__item"><img src="{{ asset('storage/' . $photo->path) }}"
+                             alt="Image montrant le marché de gourmets" class="gallery__img">
+                    </li>
+                @endforeach
+
+            @endforeach
         </ul>
     </div>
     <div class="cta__wrapper">

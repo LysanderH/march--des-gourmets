@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Exhibitor;
+use App\Models\Category;
 use Illuminate\Http\Request;
 
-class ExhibitorController extends Controller
+class CategoryController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,9 +14,7 @@ class ExhibitorController extends Controller
      */
     public function index()
     {
-        $exhibitors = Exhibitor::with('categories')->where('accepted', true)->paginate(10);
-
-        return view('exhibitors', ['exhibitors' => $exhibitors]);
+        //
     }
 
     /**
@@ -26,7 +24,7 @@ class ExhibitorController extends Controller
      */
     public function create()
     {
-        return view('become-exhibitor');
+        //
     }
 
     /**
@@ -43,10 +41,10 @@ class ExhibitorController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Exhibitor  $exhibitor
+     * @param  \App\Models\Category  $category
      * @return \Illuminate\Http\Response
      */
-    public function show(Exhibitor $exhibitor)
+    public function show(Category $category)
     {
         //
     }
@@ -54,10 +52,10 @@ class ExhibitorController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Exhibitor  $exhibitor
+     * @param  \App\Models\Category  $category
      * @return \Illuminate\Http\Response
      */
-    public function edit(Exhibitor $exhibitor)
+    public function edit(Category $category)
     {
         //
     }
@@ -66,10 +64,10 @@ class ExhibitorController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Exhibitor  $exhibitor
+     * @param  \App\Models\Category  $category
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Exhibitor $exhibitor)
+    public function update(Request $request, Category $category)
     {
         //
     }
@@ -77,10 +75,10 @@ class ExhibitorController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Exhibitor  $exhibitor
+     * @param  \App\Models\Category  $category
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Exhibitor $exhibitor)
+    public function destroy(Category $category)
     {
         //
     }

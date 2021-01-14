@@ -10,15 +10,21 @@
     "require": {
         "php": "^7.3|^8.0",
         "barryvdh/laravel-debugbar": "^3.5",
+        "calebporzio/livewire": "^2.3",
+        "dniccum/phone-number": "^1.1",
         "ebess/advanced-nova-media-library": "^3.4",
+        "ericlagarda/nova-gallery": "^1.3",
         "fideloper/proxy": "^4.4",
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^7.0.1",
+        "inspheric/nova-email-field": "^1.42",
         "khalin/nova-link-field": "^1.2",
+        "laraning/nova-time-field": "^1.2",
         "laravel/framework": "^8.12",
         "laravel/nova": "*",
         "laravel/tinker": "^2.5",
-        "whitecube/nova-page": "^0.2.5"
+        "whitecube/nova-page": "^0.2.5",
+        "wotta/iban-validation": "^0.0.1"
     },
     "require-dev": {
         "facade/ignition": "^2.5",
