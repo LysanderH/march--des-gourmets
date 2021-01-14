@@ -1,0 +1,24 @@
+{
+    "title": "Informations pratiques",
+    "created_at": "2021-01-03 12:00:00",
+    "updated_at": "2021-01-14 19:47:55",
+    "attributes": {
+        "access_car": "Profitez de notre parking, on vous conseille de prendre la sortie A604 sur l'autoroute E40.",
+        "access_public": "En bus, il suffit de prendre le num\u00e9ro 9, celui-ci passe aussi \u00e0 la gare de Li\u00e8ge-Guillemins",
+        "info_bancontact_img": "krieKHOxoGbjInDY3WBHh3RSJ55Wa0VL9mW2LMbp.png",
+        "info_description_one": "Le payement par banccontact est possible sur les lieux. Si un vendeur n'a pas de module de payement sans contact, il est toujours possible de retirer de l'argent \u00e0 l'entr\u00e9e.",
+        "info_animal_img": "lOETt4dnU9wwOQknXYCPPO718wPCsZAu17vNizwR.svg",
+        "info_description_two": "Les animaux de companie ne sont pas permis sur les lieux.",
+        "feature_three_title": "La garderie",
+        "feature_three_content": "Pour les enfants de _ \u00e0 _ ans, les membre du _________ organisent une garderie avec des animations et des jeux. Ainsi, il vous est possible de passer un beau moment tout en sachant que vos enfants s'amusent.",
+        "feature_three_img": "O7CYrEPITCkBk148Q5WBufkjf5MafusswDK6Qvip.jpg",
+        "feature_three_link_label": "Voir le plan d'espace",
+        "feature_three_link": "\/plan-d-espace",
+        "feature_three_blank": true,
+        "feature_four_title": "Le restaurant",
+        "feature_four_content": "Les membres du rotari club fl\u00e9malle organisent un restaurant avec des plats froids, dont les ingr\u00e9dients proviennent des producteurs du march\u00e9. Ainsi, vous pouvez gouter l'excellence des produits offerts \u00e0 nos stands.",
+        "feature_four_link_label": "Voir les exposants",
+        "feature_four_link": "\/exposants",
+        "feature_four_blank": false
+    }
+}

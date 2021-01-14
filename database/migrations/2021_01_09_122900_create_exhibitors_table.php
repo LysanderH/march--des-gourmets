@@ -15,6 +15,18 @@ class CreateExhibitorsTable extends Migration
     {
         Schema::create('exhibitors', function (Blueprint $table) {
             $table->id();
+            $table->text('company');
+            $table->text('name');
+            $table->text('firstname');
+            $table->text('email');
+            $table->text('phone');
+            $table->text('street');
+            $table->text('house_number');
+            $table->integer('postal');
+            $table->text('village');
+            $table->text('country');
+            $table->longText('description');
+            $table->boolean('accepted');
             $table->timestamps();
         });
     }
