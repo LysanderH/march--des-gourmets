@@ -1274,7 +1274,7 @@ select {
   display: -ms-flexbox;
   display: flex;
   flex-direction: row-reverse;
-  justify-content: flex-start;
+  justify-content: flex-end;
   align-items: center;
   font-family: "Roboto", sans-serif;
   font-size: 16px;

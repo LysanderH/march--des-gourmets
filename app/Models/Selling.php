@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Selling extends Model
 {
     use HasFactory;
+
+    protected $table = 'sellings';
+
+    protected $guarded = [];
 }

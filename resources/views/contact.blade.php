@@ -7,17 +7,40 @@
 
     <div class="contact__wrapper">
         <span class="contact__heading subtitle">Contact</span>
-        <form action="#" method="post" class="contact__form">
+
+
+        <form action="contact" method="post" class="contact__form">
+            @if (session()->has('success'))
+                <p class="contact__success">
+                    {{ session()->get('success') }}
+                </p>
+            @endif
+            @csrf
             <label for="name" class="contact__label">Nom</label>
-            <input type="text" id="name" name="name" class="contact__input">
+            <input type="text" id="name" name="name" class="contact__input" value="{{ old('name') }}"
+                   placeholder="Max Mustermann" required>
+            @error('name')
+                <label for="name" class="contact__label error">{{ $message }}</label>
+            @enderror
             <label for="mail" class="contact__label">Mail</label>
-            <input type="mail" id="mail" name="mail" class="contact__input">
+            <input type="mail" id="mail" name="email" class="contact__input" value="{{ old('mail') }}"
+                   placeholder="exemple@mail.com" required>
+            @error('email')
+                <label for="mail" class="contact__label error">{{ $message }}</label>
+            @enderror
             <label for="subject" class="contact__label">Sujet</label>
-            <input type="text" id="subject" name="subject" class="contact__input">
+            <input type="text" id="subject" name="subject" class="contact__input" value="{{ old('subject') }}"
+                   placeholder="Max Mustermann" required>
+            @error('subject')
+                <label for="subject" class="contact__label error">{{ $message }}</label>
+            @enderror
             <label for="message" class="contact__label">Message</label>
             <textarea name="message" id="message" cols="30" rows="10" placeholder="Votre message ici..."
-                      class="contact__input"></textarea>
-            <button class="contact__submit btn cta">Envoyer</button>
+                      class="contact__input" required>{{ old('message') }}</textarea>
+            @error('message')
+                <label for="message" class="contact__label error">{{ $message }}</label>
+            @enderror
+            <button class="contact__submit btn cta" type="submit">Envoyer</button>
         </form>
         <p class="contact__message">
             {{ Page::get('contact_info_message') }}

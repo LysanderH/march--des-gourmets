@@ -18,11 +18,13 @@
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^7.0.1",
         "inspheric/nova-email-field": "^1.42",
+        "intervention/image": "^2.5",
         "khalin/nova-link-field": "^1.2",
         "laraning/nova-time-field": "^1.2",
         "laravel/framework": "^8.12",
         "laravel/nova": "*",
         "laravel/tinker": "^2.5",
+        "stripe/stripe-php": "^7.68",
         "whitecube/nova-page": "^0.2.5",
         "wotta/iban-validation": "^0.0.1"
     },

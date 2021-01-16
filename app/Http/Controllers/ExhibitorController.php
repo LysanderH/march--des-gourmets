@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Jobs\SendRequestConfirmationEmail;
+use App\Models\Category;
 use App\Models\Exhibitor;
 use Illuminate\Http\Request;
+use Intervention\Image\Facades\Image;
 
 class ExhibitorController extends Controller
 {
@@ -26,7 +29,9 @@ class ExhibitorController extends Controller
      */
     public function create()
     {
-        return view('become-exhibitor');
+        $categories = Category::all();
+
+        return view('become-exhibitor', ['categories' => $categories]);
     }
 
     /**
@@ -37,7 +42,62 @@ class ExhibitorController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validated = $request->validate([
+            'enterprise' => 'required',
+            'name' => 'required',
+            'first_name' => 'required',
+            'mail' => 'required|email',
+            'phone' => 'required',
+            'logo' => 'mimes:png,jpg,JPG',
+            'street' => 'required',
+            'street_number' => 'required|numeric',
+            'postal' => 'required',
+            'ville' => 'required',
+            'country' => 'required',
+            'message' => 'required|max:10000',
+        ]);
+
+
+        $originalImage = $request->file('logo');
+
+        $img = Image::make($originalImage);
+
+        $img->resize(66, 66, function ($constraint) {
+            $constraint->aspectRatio();
+            $constraint->upsize();
+        });
+
+        $fileName = preg_replace("/[^a-zA-Z]+/", "", $validated['enterprise']) . md5(rand(1, 10) . microtime()) . '.jpg';
+
+        $img->save(public_path('/storage/') . $fileName, 80, 'jpg');
+
+        $exhibitor = Exhibitor::create([
+            'company' => $validated['enterprise'],
+            'name' => $validated['name'],
+            'firstname' => $validated['first_name'],
+            'email' => $validated['mail'],
+            'phone' => $validated['phone'],
+            'street' => $validated['street'],
+            'house_number' => $validated['street_number'],
+            'postal' => $validated['postal'],
+            'village' => $validated['ville'],
+            'country' => $validated['country'],
+            'accepted' => false,
+            'logo' => $fileName,
+            'description' => $validated['message'],
+        ]);
+
+        foreach ($request->art_type as $category) {
+            $exhibitor->categories()->attach(Category::where('name', $category)->first()->id);
+        }
+
+
+        $details['exhibitor'] = $exhibitor;
+        $details['email'] = $validated['mail'];
+
+        dispatch(new SendRequestConfirmationEmail($details));
+
+        return redirect()->back();
     }
 
     /**

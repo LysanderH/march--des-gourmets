@@ -1,7 +1,9 @@
 <?php
 
+use App\Http\Controllers\EmailController;
 use App\Http\Controllers\ExhibitorController;
 use App\Http\Controllers\GaleryController;
+use App\Http\Controllers\SellingController;
 use App\Nova\Templates\Contact;
 use App\Nova\Templates\PlanDesLieux;
 use App\Nova\Templates\PracticalInformation;
@@ -24,6 +26,8 @@ Route::get('/', function () {
 
 Route::get('/exposants', [ExhibitorController::class, 'index'])->name('exhibitors');
 
+Route::post('/exhibitor', [ExhibitorController::class, 'store']);
+
 Route::get('/devenir-exposant', [ExhibitorController::class, 'create'])->name('become-exhibitor');
 
 Route::get('/informations-pratiques', function () {
@@ -38,6 +42,16 @@ Route::get('/contact', function () {
     return view('contact');
 })->name('contact')->template(Contact::class);
 
+Route::post('/contact', [EmailController::class, 'send']);
+
 Route::get('/plan-d-espace', function () {
     return view('plan-espace');
 })->name('plan')->template(PlanDesLieux::class);
+
+Route::get('/tickets', [SellingController::class, 'index']);
+
+Route::post('/tickets', [SellingController::class, 'create']);
+
+Route::post('/tickets/address', [SellingController::class, 'checkAddress']);
+
+Route::post('/success', [SellingController::class, 'store']);

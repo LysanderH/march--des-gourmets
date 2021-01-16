@@ -108,7 +108,7 @@
     &__label {
         display: flex;
         flex-direction: row-reverse;
-        justify-content: flex-start;
+        justify-content: flex-end;
         align-items: center;
         @include roboto(16px, $text-color);
         margin: 8px 0;

@@ -27,6 +27,7 @@ class CreateExhibitorsTable extends Migration
             $table->text('country');
             $table->longText('description');
             $table->boolean('accepted');
+            $table->text('logo')->nullable();
             $table->timestamps();
         });
     }

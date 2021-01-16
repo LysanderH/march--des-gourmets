@@ -3,31 +3,27 @@
 namespace App\Nova;
 
 use Illuminate\Http\Request;
-use Laravel\Nova\Fields\BelongsToMany;
-use Laravel\Nova\Fields\Boolean;
+use Laravel\Nova\Fields\Currency;
 use Laravel\Nova\Fields\ID;
-use Laravel\Nova\Fields\Image;
-use Laravel\Nova\Fields\MorphToMany;
 use Laravel\Nova\Fields\Number;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Http\Requests\NovaRequest;
-use Laravel\Nova\Panel;
 
-class Exhibitor extends Resource
+class Selling extends Resource
 {
     /**
      * The model the resource corresponds to.
      *
      * @var string
      */
-    public static $model = \App\Models\Exhibitor::class;
+    public static $model = \App\Models\Selling::class;
 
     /**
      * The single value that should be used to represent the resource when being displayed.
      *
      * @var string
      */
-    public static $title = 'company';
+    public static $title = 'id';
 
     /**
      * The columns that should be searched.
@@ -35,18 +31,13 @@ class Exhibitor extends Resource
      * @var array
      */
     public static $search = [
-        'company',
+        'id',
+        'name',
+        'first-name',
+        'email',
+        'tel',
+        'checktoken',
     ];
-
-    /**
-     * Modify label displayed in menu.
-     *
-     * @return string
-     */
-    public static function label()
-    {
-        return 'Exposants';
-    }
 
     /**
      * Get the fields displayed by the resource.
@@ -58,15 +49,23 @@ class Exhibitor extends Resource
     {
         return [
             ID::make(__('ID'), 'id')->sortable(),
-            Text::make('Nom d’entreprise', 'company')->sortable(),
-            Boolean::make('Accepté', 'accepted')->sortable(),
-            Text::make('Nom', 'name')->hideFromIndex(),
-            Text::make('Prénom', 'firstname')->hideFromIndex(),
-            Text::make('Email', 'email')->hideFromIndex(),
-            Text::make('Description', 'description')->hideFromIndex(),
-            Image::make('Logo', 'logo'),
-            new Panel('Adresse', $this->addressFields()),
-            BelongsToMany::make('Categories')
+            Text::make('Nom', 'name')->sortable(),
+            Text::make('Prénom', 'first-name')->hideFromIndex(),
+            Text::make('Email', 'email')->rules('email')->hideFromIndex(),
+            Text::make('Téléphone', 'tel')->hideFromIndex(),
+            Text::make('Nom de rue', 'street')->hideFromIndex(),
+            Number::make('Numéro de maison', 'number')->rules('min:0')->hideFromIndex(),
+            Text::make('Code postal', 'postal')->hideFromIndex(),
+            Text::make('Ville', 'town')->hideFromIndex(),
+            Text::make('Pays', 'country')->hideFromIndex(),
+            Number::make('Tickets enfants', 'children')->hideFromIndex(),
+            Number::make('Tickets adultes', 'adults')->hideFromIndex(),
+            Currency::make('Total enfants', 'total_children')->hideFromIndex(),
+            Currency::make('Total adultes', 'total_adults')->hideFromIndex(),
+            Currency::make('Total', 'total_adults')->hideFromIndex(),
+            Text::make('Chaine de sécurité', 'checktoken')->default(function ($request) {
+                return md5(rand(1, 10) . microtime());
+            })->sortable(),
         ];
     }
 
@@ -112,16 +111,5 @@ class Exhibitor extends Resource
     public function actions(Request $request)
     {
         return [];
-    }
-
-    public function addressFields()
-    {
-        return [
-            Text::make('Rue', 'street')->hideFromIndex(),
-            Number::make('Numéro de maison', 'house_number')->hideFromIndex(),
-            Number::make('Code Postal', 'postal')->hideFromIndex(),
-            Text::make('Ville', 'village')->hideFromIndex(),
-            Text::make('Pays', 'country'),
-        ];
     }
 }
