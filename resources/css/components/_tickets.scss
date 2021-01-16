@@ -1,0 +1,124 @@
+.tickets{
+    &__form {
+        display: flex;
+        flex-direction: column;
+        max-width: 800px;
+        margin: auto;
+        align-items: center;
+    }
+
+    &__label {
+        @include roboto(16px, $text-color);
+        margin-bottom: .5em;
+    }
+
+    &__input {
+        @include roboto(16px, $text-color);
+        margin-bottom: 2em;
+        padding: 8px 16px;
+        border: 1px solid $input-border;
+
+        @include media-query(0, 571px) {
+            width: 100%;
+        }
+    }
+}
+
+.confirm {
+    &__data-list {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        @include roboto(16px, $text-color);
+        max-width: 800px;
+        margin: auto;
+    }
+    &__therm {
+        margin-top: 16px;
+        font-weight: 700;
+    }
+}
+
+.address {
+
+    &__form {
+        display: flex;
+        flex-direction: column;
+        max-width: 500px;
+        margin: 32px auto;
+        // align-items: center;
+    }
+
+    &__label {
+        @include roboto(16px, $text-color);
+        margin-bottom: .5em;
+    }
+
+    &__input {
+        @include roboto(16px, $text-color);
+        margin-bottom: 2em;
+        padding: 8px 16px;
+        border: 1px solid $input-border;
+
+        @include media-query(0, 571px) {
+            width: 100%;
+        }
+    }
+}
+
+/**
+ * The CSS shown here will not be introduced in the Quickstart guide, but shows
+ * how you can use CSS to style your Element's container.
+ */
+.StripeElement {
+    box-sizing: border-box;
+
+    height: 40px;
+
+    padding: 10px 12px;
+
+    border: 1px solid transparent;
+    border-radius: 4px;
+    background-color: white;
+
+    box-shadow: 0 1px 3px 0 #e6ebf1;
+    -webkit-transition: box-shadow 150ms ease;
+    transition: box-shadow 150ms ease;
+}
+
+.StripeElement--focus {
+    box-shadow: 0 1px 3px 0 #cfd7df;
+}
+
+.StripeElement--invalid {
+    border-color: #fa755a;
+}
+
+.StripeElement--webkit-autofill {
+    background-color: #fefde5 !important;
+}
+
+#payment-form{
+    max-width: 500px;
+    margin: 32px auto;
+}
+
+.success{
+    &__list {
+        display: flex;
+        flex-direction: column;
+        max-width: 500px;
+        margin: 48px auto;
+        @include roboto(16px, $text-color);
+    }
+    &__message {
+        text-align: center;
+        @include roboto(24px, $text-color, 700);
+        margin-top: 32px;
+    }
+}
+
+.succes__therm {
+    @include roboto(16px, $text-color, 700);
+    margin: 16px 0 8px 0;
+}

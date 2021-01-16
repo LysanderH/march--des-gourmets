@@ -2,18 +2,29 @@
     max-width: $max-width-desktop;
     margin: 46px auto;
     position: relative;
+    @include media-query(0, 1137px) {
+        padding: 0 16px;
+    }
 
-&::before {
-    content: "";
-    display: block;
-    width: calc(((100vw - 1088px) / 2) + 1088px + 16px);
-    height: 100px;
-    background-color: $sectioning;
-    position: absolute;
-    top: 0;
-    right: -16px;
-    z-index: -1;
-}
+    &::before {
+        content: "";
+        display: block;
+        width: calc(((100vw - 1088px) / 2) + 1088px + 16px);
+        height: 100px;
+        background-color: $sectioning;
+        position: absolute;
+        top: 0;
+        right: -16px;
+        z-index: -1;
+
+        @include media-query(0, 1137px) {
+            width: 100%;
+            right: 0;
+        }
+        @include media-query(0, 625px) {
+            height: 10em;
+        }
+    }
 
     &__cta {
         margin: 0 auto 48px auto;
@@ -22,6 +33,9 @@
 
     &__form {
         margin-left: auto;
+        @include media-query(0, 625px) {
+            margin: 16px 0;
+        }
     }
 
     &__img {
@@ -38,28 +52,60 @@
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         grid-gap: 16px;
+        @include media-query(0, 625px) {
+            display: flex;
+            flex-direction: column;
+            padding: 16px;
+        }
+        @include media-query(0, 625px) {
+            margin-top: 64px;
+        }
     }
 
     &__select {
         border: none;
         padding: 8px 4px;
         box-shadow: 0 0 6px $section-border;
+
     }
 
     &__subtitle {
         position: absolute;
         top: -32px;
         left: -24px;
+        @include media-query(0, 1137px) {
+            left: 24px;
+        }
     }
 
     &__text {
-        @include roboto(16px, $text-color)
+        @include roboto(16px, $text-color);
+        @include media-query(0, 625px) {
+            margin: 32px 0;
+        }
+
     }
 
     &__wrapper {
         display: flex;
         align-items: center;
         height: 100px;
+
+        @include media-query(0, 625px) {
+            flex-direction: column;
+        }
     }
 }
 
+.wysiwyg {
+    max-width: 1088px;
+    padding: 16px;
+    font-family: Roboto;
+    margin: auto;
+}
+
+.facebook {
+    width: 50px;
+    height: auto;
+    padding: 8px;
+}

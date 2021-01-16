@@ -55,3 +55,7 @@ Route::post('/tickets', [SellingController::class, 'create']);
 Route::post('/tickets/address', [SellingController::class, 'checkAddress']);
 
 Route::post('/success', [SellingController::class, 'store']);
+
+Route::get('/conditions-d-utilisation', function () {
+    return view('legal');
+})->template(\App\Nova\Templates\Legal::class)->name('legal');

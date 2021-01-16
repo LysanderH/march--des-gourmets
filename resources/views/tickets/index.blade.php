@@ -13,7 +13,7 @@
         <label for="tickets-adults" class="tickets__label">Tickets pour adultes à partir de 16 ans
             (@option('Prix.price_adults')€)</label>
         <input type="number" class="tickets__input" name="tickets_adults" id="tickets-adults" min="0" value="0">
-        <button type="submit">Continuer</button>
+        <button type="submit" class="btn tickets__btn">Continuer</button>
     </form>
 
 @endsection

@@ -19,6 +19,10 @@
         "a d c" 
         "hello e e";
         
+        @include media-query(0, 1137px) {
+            margin: 0;
+            width: 100%;
+        }
     }
     
     &__img{
@@ -30,6 +34,11 @@
         max-height: 620px;
         height: calc(100vh - 82px);
         background: url('../storage/assets/img/hello.jpeg') no-repeat 50% 50%;
+                @include media-query(0, 1137px) {
+                    margin: 0;
+                    width: 100%;
+                    max-width: auto;
+                }
     }
 }
 
@@ -52,11 +61,20 @@
     display: flex;
     flex-direction: column;
     padding: 16px 16px 0 0;
+
+    @include media-query(0, 840px) {
+        grid-column: 1/-1;
+        padding: 16px;
+    }
     
     &__heading {
         position: absolute;
         top: -32px;
         left: -24px;
+
+        @include media-query(0, 1137px) {
+            left: 0;
+        }
         
         sup{
             vertical-align: super;
@@ -80,11 +98,23 @@
     background-color: $sectioning;
     padding: 16px 16px 16px 0;
     display: flex;
+
+    @include media-query(0, 1137px) {
+        width: 100%;
+    }
     
     &__wrapper {
         margin-left: auto;
         width: $max-width-desktop;
         display: flex;
+
+        @include media-query(0, 1137px) {
+            left: 0;
+            padding: 16px;
+        }
+        @include media-query(0, 530px) {
+            flex-direction: column;
+        }
     }
     
     &__d-one, &__d-two {
@@ -92,6 +122,9 @@
         flex-direction: column;
         text-align: center;
         flex: 1;
+        @include media-query(0, 530px) {
+            margin: 16px 0;
+        }
     }
     
     &__day {
@@ -110,11 +143,21 @@
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     grid-column-gap: 16px;
+
+    @include media-query(0, 715px) {
+        display: flex;
+        flex-direction: column;
+        padding: 16px;
+        // align-items: center;
+    }
     
     &__img {
         width: 436px;
         height: auto;
         grid-column: 3/6;
+                @include media-query(0, 470px) {
+                    width: 100%;
+                }
     }
     
     &__description {
@@ -136,6 +179,9 @@
         position: relative;
         top: 32px;
         left: -24px;
+        @include media-query(0, 715px) {
+            left: 0;
+        }
     }
     
     &__link {
@@ -154,6 +200,17 @@
     grid-template-columns: repeat(3, 1fr);
     position: relative;
     grid-gap: 16px;
+
+    @include media-query(0, 1137px) {
+        width: 100%;
+        padding: 16px;
+    }
+
+    @include media-query(0, 710px) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
     
     &__heading {
         grid-column: 1/-1;
@@ -190,11 +247,19 @@
         width: calc(((100vw - 1088px) / 2) + 1088px + 16px);
         height: 176px;
         background-color: $sectioning;
+        @include media-query(0, 1137px) {
+            width: 100%;
+            left: 0;
+        }
     }
     
     &__item {
         display: flex;
         flex-direction: column;
+        @include media-query(0, 710px) {
+            max-width: 400px;
+            margin-bottom: 32px;
+        }
     }
     
     &__btn {
@@ -210,7 +275,11 @@
     flex-direction: column;
     max-width: $max-width-desktop;
     margin: 0 auto 48px auto;
-    
+    @include media-query(0, 1137px) {
+        padding: 16px;
+    }
+
+
     
     &__heading, &__btn {
         align-self: center;
@@ -230,6 +299,10 @@
         z-index: -1;
         top: 32px;
         right: -16px;
+        @include media-query(0, 1137px) {
+            width: 100%;
+            left: 0;
+        }
     }
     &--right::before{
         left: -16px;
@@ -246,6 +319,10 @@
         grid-template-columns: repeat(3, 1fr);
         grid-gap: 16px;
         margin-top: 24px;
+        @include media-query(0, 1137px) {
+           display: flex;
+           flex-direction: column;
+        }
     }
     
     &__wrapper {
@@ -272,6 +349,10 @@
     display: flex;
     flex-direction: column;
     position: relative;
+
+    @include media-query(0, 800px) {
+        
+    }
     
     &__heading {
         position: absolute;
@@ -279,6 +360,9 @@
         left: -24px;
         align-self: center;
         margin-bottom: 16px;
+        @include media-query(0, 585px) {
+            left: 0;
+        }
     }
     
     &__btn {
@@ -305,5 +389,8 @@
         flex-wrap: wrap;
         justify-content: space-around;
         margin-top: 16px;
+    }
+    &__img {
+        margin: 32px;
     }
 }

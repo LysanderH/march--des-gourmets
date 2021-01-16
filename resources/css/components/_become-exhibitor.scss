@@ -3,15 +3,27 @@
     align-items: center;
     justify-content: space-around;
     position: relative;
+    flex-wrap: wrap;
     padding: 32px 16px;
     margin-top: 48px;
     max-width: $max-width-desktop;
     margin: 48px auto;
     @include roboto(16px, $text-color, $lh: 1.5);
+    @include media-query(0, 465px) {
+        width: 100%;
+        left: 0;
+        &__pricing {
+            margin-bottom: 16px;
+        }
+    }
+
     &__heading {
         position: absolute;
         top: -32px;
         left: -24px;
+        @include media-query(0, 1137px) {
+            left: 24px;
+        }
     }
     
     &::before {
@@ -24,6 +36,10 @@
         width: calc(((100vw - 1088px) / 2) + 1088px + 16px);
         background-color: $sectioning;
         z-index: -1;
+        @include media-query(0, 1137px) {
+            width: 100%;
+            left: 0;
+        }
     }
 }
 
@@ -33,6 +49,18 @@
     grid-gap: 16px;
     max-width: $max-width-desktop;
     margin: auto;
+
+    @include media-query(0, 1137px) {
+        display: flex;
+        flex-direction: column;
+        max-width: 536px;
+    }
+    @include media-query(0, 571px) {
+        padding: 16px;
+        max-width: 100%;
+    }
+
+    
     
     &__section {
         display: flex;
@@ -46,6 +74,10 @@
             display: grid;
             grid-template-columns: repeat(6, 1fr);
             grid-column: 1/-1;
+            @include media-query(0, 1137px) {
+                display: flex;
+                flex-wrap: wrap;
+            }
         }
         
         &--message {
@@ -58,6 +90,9 @@
         padding: 16px;
         @include roboto(16px, $text-color, $lh: 1.5);
         margin: 16px 0;
+        @include media-query(0, 571px) {
+            width: 100%;
+        }
     }
     
     &__submit {
@@ -86,6 +121,10 @@
     margin-bottom: 2em;
     padding: 8px 16px;
     border: 1px solid $input-border;
+
+    @include media-query(0, 571px) {
+        width: 100%;
+    }
     
     &--checkbox {
         position: absolute;

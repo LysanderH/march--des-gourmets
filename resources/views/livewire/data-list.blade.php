@@ -56,7 +56,7 @@
                 @if ($exhibitor->categories->isNotEmpty())
                     <ul class="exhibitor__list">
                         @foreach ($exhibitor->categories as $category)
-                            <li class="exhibitor__item">{{ $category->name }}</li>
+                            <li class="exhibitor__item {{ mb_strtolower($category->name) }}">{{ $category->name }}</li>
                         @endforeach
                     </ul>
                 @endif
@@ -68,6 +68,6 @@
     @else
         <p class="exhibitors__no-exhibitors">La liste des exposants arrivera bientôt.</p>
         @endif
-        {{ $exhibitors->links() }}
+        {{ $exhibitors->links('vendor.pagination.tailwind') }}
 
 </div>

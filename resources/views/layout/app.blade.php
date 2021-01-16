@@ -81,7 +81,10 @@
     </main>
     <footer class="footer">
         <div class="footer__wrapper">
-            <a href="/facebook" class="footer__fb" title="like us on facebook">F</a>
+            <a href="https://www.facebook.com/March%C3%A9-des-Gourmets-563512323676395" class="footer__fb"
+               title="like us on facebook"><img
+                     src="{{ asset('/storage/assets/icons/f_logo_RGB-Hex-Blue_512.webp') }}" alt=""
+                     class="facebook"></a>
             <nav class="footer__nav" aria-label="de pied de page">
                 <h2 class="sr-only">Navigation de pied de page</h2>
                 <ul class="f-nav__list">

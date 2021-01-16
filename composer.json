@@ -25,6 +25,7 @@
         "laravel/nova": "*",
         "laravel/tinker": "^2.5",
         "stripe/stripe-php": "^7.68",
+        "te7a-houdini/laravel-trix": "^2.0",
         "whitecube/nova-page": "^0.2.5",
         "wotta/iban-validation": "^0.0.1"
     },

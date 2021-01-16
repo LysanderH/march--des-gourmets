@@ -5,6 +5,7 @@
 @section('map-css')
     <script src="https://js.stripe.com/v3/"></script>
     <script src="{{ asset('js/client.js') }}" defer></script>
+    <link rel="stylesheet" href="{{ asset('css/payment.css') }}">
 @endsection
 
 @section('content')
