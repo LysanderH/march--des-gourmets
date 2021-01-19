@@ -71,7 +71,7 @@
 
     <section class="feature" aria-label="Le restaurant">
         <h2 class="feature__heading" role="heading" aria-level="2">{{ Page::get('feature_two_title') }}</h2>
-        <img src="{{ asset('/storage/' . Page::get('feature_two_img')) }}" alt="Image de la garderie"
+        <img src="{{ asset('/storage/' . Page::get('feature_img_two')) }}" alt="Image de la garderie"
              class="feature__img" width="536" height="458">
         <p class="feature__description">{{ Page::get('feature_two_content') }}</p>
         <a href="{{ Page::get('feature_two_link') }}" class="feature__link cta btn"
@@ -101,7 +101,7 @@
 
     <section class="producer" aria-label="Voulez-vous vendre vos produits?">
         <h2 class="producer__heading" role="heading" aria-level="2">{{ Page::get('exhibitor_cta_title') }}</h2>
-        <img src="{{ asset('/storage/assets/img/hello.jpeg') }}" alt="Image représentant la salle d'exposition">
+        <img src="{{ asset('/storage/' . Page::get('exhibitor_cta_img')) }}" alt="Image représentant la salle d'exposition">
         <a href="{{ Page::get('exhibitor_cta_link') }}" class="btn cta producer__btn"
            @if (Page::get('exhibitor_cta_blank')) rel="noopener noreferrer" target="_blank"
             @endif>{{ Page::get('exhibitor_cta_link_label') }}</a>

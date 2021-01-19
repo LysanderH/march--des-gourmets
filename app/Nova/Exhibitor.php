@@ -2,6 +2,7 @@
 
 namespace App\Nova;
 
+use Ctessier\NovaAdvancedImageField\AdvancedImage;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\BelongsToMany;
 use Laravel\Nova\Fields\Boolean;
@@ -64,7 +65,7 @@ class Exhibitor extends Resource
             Text::make('Prénom', 'firstname')->hideFromIndex(),
             Text::make('Email', 'email')->hideFromIndex(),
             Text::make('Description', 'description')->hideFromIndex(),
-            Image::make('Logo', 'logo'),
+            AdvancedImage::make('Logo', 'logo')->croppable(1 / 1)->resize(66, 66)->help('Veuillez choisir une image qui fait moins de 1200x1200 et moins de 2 Mo.'),
             new Panel('Adresse', $this->addressFields()),
             BelongsToMany::make('Categories')
         ];

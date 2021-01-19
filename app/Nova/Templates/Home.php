@@ -2,7 +2,7 @@
 
 namespace App\Nova\Templates;
 
-
+use Ctessier\NovaAdvancedImageField\AdvancedImage;
 use Illuminate\Http\Request;
 use Khalin\Nova\Field\Link;
 use Laravel\Nova\Fields\Boolean;
@@ -24,7 +24,7 @@ class Home extends Template
     public function fields(Request $request)
     {
         return [
-            Image::make('Image de fond', 'bcg_img')->hideFromIndex(),
+            AdvancedImage::make('Image de fond', 'bcg_img')->croppable()->resize(null, 1088)->help('Veuillez choisir une image qui fait moins de 1200x1200 et moins de 2 Mo.')->hideFromIndex(),
             new Panel('Message d’accueil', $this->welcomeMessageFields()),
             new Panel('Premier élément disctinctif', $this->featureOneFields()),
             new Panel('Les projets soutenus', $this->supportedProjectsFields()),
@@ -67,8 +67,7 @@ class Home extends Template
         return [
             Text::make('Titre', 'feature_title'),
             Textarea::make('Contenu', 'feature_content'),
-            Image::make('Ajouter une image', 'feature_img')
-                ->help('Veuillez choisir une image qui fait moins de 1200x1200 et moins de 2 Mo.'),
+            AdvancedImage::make('Ajouter une image', 'feature_img')->croppable()->resize(436, 290)->help('Veuillez choisir une image qui fait moins de 1200x1200 et moins de 2 Mo.'),
             Text::make('Label du lien', 'feature_link_label'),
             Link::make('Url', 'feature_link'),
             Boolean::make('Ouvrir le lien dans un nouvel onglet', 'feature_blank')
@@ -80,13 +79,13 @@ class Home extends Template
         return [
             Text::make('1. Titre', 'supported_title_one'),
             Textarea::make('1. Contenu', 'supported_content_one'),
-            Image::make('1. Ajouter une image', 'supported_img_one'),
+            AdvancedImage::make('1. Ajouter une image', 'supported_img_one')->croppable(1 / 1)->resize(352, 352)->help('Veuillez choisir une image qui fait moins de 1200x1200 et moins de 2 Mo.'),
             Text::make('2. Titre', 'supported_title_two'),
             Textarea::make('2. Contenu', 'supported_content_two'),
-            Image::make('2. Ajouter une image', 'supported_img_two'),
+            AdvancedImage::make('2. Ajouter une image', 'supported_img_two')->croppable(1 / 1)->resize(352, 352)->help('Veuillez choisir une image qui fait moins de 1200x1200 et moins de 2 Mo.'),
             Text::make('3. Titre', 'supported_title_three'),
             Textarea::make('3. Contenu', 'supported_content_three'),
-            Image::make('3. Ajouter une image', 'supported_img_three'),
+            AdvancedImage::make('3. Ajouter une image', 'supported_img_three')->croppable(1 / 1)->resize(352, 352)->help('Veuillez choisir une image qui fait moins de 1200x1200 et moins de 2 Mo.'),
             Text::make('Label du lien', 'supported_link_label'),
             Link::make('Url', 'supported_link')->placeholder('https://www.exemple.com'),
             Boolean::make('Ouvrir le lien dans un nouvel onglet', 'supported_blank')
@@ -98,7 +97,7 @@ class Home extends Template
         return [
             Text::make('Titre', 'feature_two_title'),
             Textarea::make('Contenu', 'feature_two_content'),
-            Image::make('Ajouter une image', 'feature_two_img'),
+            AdvancedImage::make('Ajouter une image', 'feature_img_two')->croppable()->resize(436, 290)->help('Veuillez choisir une image qui fait moins de 1200x1200 et moins de 2 Mo.'),
             Text::make('Label du lien', 'feature_two_link_label'),
             Link::make('Url', 'feature_two_link'),
             Boolean::make('Ouvrir le lien dans un nouvel onglet', 'feature_two_blank')
@@ -109,7 +108,7 @@ class Home extends Template
     {
         return [
             Text::make('Titre', 'exhibitor_cta_title'),
-            Image::make('Ajouter une image', 'exhibitor_cta_img'),
+            AdvancedImage::make('Ajouter une image', 'exhibitor_cta_img')->croppable()->resize(536, 357)->help('Veuillez choisir une image qui fait moins de 1200x1200 et moins de 2 Mo.'),
             Text::make('Label du lien', 'exhibitor_cta_link_label'),
             Link::make('Url', 'exhibitor_cta_link'),
             Boolean::make('Ouvrir le lien dans un nouvel onglet', 'exhibitor_cta_blank')

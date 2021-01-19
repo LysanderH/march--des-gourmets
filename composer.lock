@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1b5c81dbb81e66a77c865c575a5ca73d",
+    "content-hash": "557bd2c82619b1f304a1d7550595c483",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -440,6 +440,60 @@
             ],
             "abandoned": "livewire/livewire",
             "time": "2021-01-08T17:33:29+00:00"
+        },
+        {
+            "name": "ctessier/nova-advanced-image-field",
+            "version": "v1.2.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ctessier/nova-advanced-image-field.git",
+                "reference": "68d6c9bca4084d304e6fba0f71172e54d71a5ffe"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ctessier/nova-advanced-image-field/zipball/68d6c9bca4084d304e6fba0f71172e54d71a5ffe",
+                "reference": "68d6c9bca4084d304e6fba0f71172e54d71a5ffe",
+                "shasum": ""
+            },
+            "require": {
+                "intervention/image": "^2.5",
+                "php": ">=7.1.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Ctessier\\NovaAdvancedImageField\\FieldServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Ctessier\\NovaAdvancedImageField\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "An advanced image field for Nova with crop and resize.",
+            "keywords": [
+                "advanced",
+                "advanced image",
+                "advanced image field",
+                "crop",
+                "image",
+                "image crop",
+                "image resize",
+                "laravel",
+                "nova",
+                "resize"
+            ],
+            "support": {
+                "issues": "https://github.com/ctessier/nova-advanced-image-field/issues",
+                "source": "https://github.com/ctessier/nova-advanced-image-field/tree/v1.2.1"
+            },
+            "time": "2020-10-24T22:22:18+00:00"
         },
         {
             "name": "dniccum/phone-number",

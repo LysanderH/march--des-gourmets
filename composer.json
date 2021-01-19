@@ -11,6 +11,7 @@
         "php": "^7.3|^8.0",
         "barryvdh/laravel-debugbar": "^3.5",
         "calebporzio/livewire": "^2.3",
+        "ctessier/nova-advanced-image-field": "^1.2",
         "dniccum/phone-number": "^1.1",
         "ebess/advanced-nova-media-library": "^3.4",
         "ericlagarda/nova-gallery": "^1.3",

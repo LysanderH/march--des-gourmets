@@ -24,7 +24,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(Manager $pages)
     {
-        $pages->register('option', 'Partenaires', \App\Nova\Templates\FooterOptions::class);
+        // $pages->register('option', 'Partenaires', \App\Nova\Templates\FooterOptions::class);
         $pages->register('option', 'Prix', \App\Nova\Templates\PriceOptions::class);
         $pages->register('option', 'Horaires', \App\Nova\Templates\TimetableOptions::class);
         $pages->register('option', 'Informations de contact', \App\Nova\Templates\InformationOptions::class);

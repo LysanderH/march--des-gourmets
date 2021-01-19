@@ -2,6 +2,7 @@
 
 namespace App\Nova\Templates;
 
+use Ctessier\NovaAdvancedImageField\AdvancedImage;
 use Illuminate\Http\Request;
 use Khalin\Nova\Field\Link;
 use Laravel\Nova\Fields\Boolean;
@@ -52,10 +53,10 @@ class PracticalInformation extends Template
     public function infoFields()
     {
         return [
-            Image::make('Image bancontact', 'info_bancontact_img'),
-            Textarea::make('Description', 'info_description_one'),
-            Image::make('Image animaux de companie', 'info_animal_img'),
-            Textarea::make('Description', 'info_description_two'),
+            // Image::make('Image bancontact', 'info_bancontact_img'),
+            Textarea::make('Description payement', 'info_description_one'),
+            // Image::make('Image animaux de companie', 'info_animal_img'),
+            Textarea::make('Description animaux de companie', 'info_description_two'),
         ];
     }
 
@@ -64,7 +65,7 @@ class PracticalInformation extends Template
         return [
             Text::make('Titre', 'feature_three_title'),
             Textarea::make('Contenu', 'feature_three_content'),
-            Image::make('Ajouter une image', 'feature_three_img'),
+            AdvancedImage::make('Ajouter une image', 'feature_three_img')->croppable()->resize(436, 290)->help('Veuillez choisir une image qui fait moins de 1200x1200 et moins de 2 Mo.'),
             Text::make('Label du lien', 'feature_three_link_label'),
             Link::make('Url', 'feature_three_link'),
             Boolean::make('Ouvrir le lien dans un nouvel onglet', 'feature_three_blank')
@@ -76,7 +77,7 @@ class PracticalInformation extends Template
         return [
             Text::make('Titre', 'feature_four_title'),
             Textarea::make('Contenu', 'feature_four_content'),
-            Image::make('Ajouter une image', 'feature_four_img'),
+            AdvancedImage::make('Ajouter une image', 'feature_four_img')->croppable()->resize(436, 290)->help('Veuillez choisir une image qui fait moins de 1200x1200 et moins de 2 Mo.'),
             Text::make('Label du lien', 'feature_four_link_label'),
             Link::make('Url', 'feature_four_link'),
             Boolean::make('Ouvrir le lien dans un nouvel onglet', 'feature_four_blank')
